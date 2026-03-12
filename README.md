@@ -58,4 +58,4 @@ For each configuration we collect:
 - Speedup: `S(p) = T(1) / T(p)`
 - Parallel efficiency: `E(p) = S(p) / p`
 
-Thread/process counts tested: **1, 2, 4, 8, 16**
+Thread/process counts tested: **1, 2, 4, 8, 16, 32**

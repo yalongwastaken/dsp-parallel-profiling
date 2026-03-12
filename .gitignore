@@ -28,6 +28,9 @@ slurm-*.out
 __pycache__/
 *.pyc
 
+# docx
+~$*.docx
+
 # editor/OS
 .vscode/
 .idea/

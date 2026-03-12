@@ -1,0 +1,34 @@
+# build artifacts
+*.o
+*.out
+*.a
+*.so
+
+# compiled binaries (no extension on Linux)
+fft/pthreads/fft_pthreads
+fft/openmp/fft_omp
+fft/mpi/fft_mpi
+fir/pthreads/fir_pthreads
+fir/openmp/fir_omp
+fir/mpi/fir_mpi
+
+# data files
+data/*
+!data/README.md
+
+# job results
+results/*
+!results/README.md
+
+# slurm logs that land in root
+*.err
+slurm-*.out
+
+# python
+__pycache__/
+*.pyc
+
+# editor/OS
+.vscode/
+.idea/
+.DS_Store

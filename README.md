@@ -13,7 +13,7 @@ This repository contains parallel implementations of two DSP workloads:
 Each workload is implemented using three parallelization middlewares:
 - **Pthreads**
 - **OpenMP**
-- **OpenMPI**
+- **OpenMPI** (extra credit)
 
 The goal is to benchmark and analyze parallel scaling behavior (speedup, efficiency) across middlewares and input sizes on a single multi-core node.
 

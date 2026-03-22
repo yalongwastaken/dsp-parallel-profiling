@@ -5,9 +5,11 @@
 *.so
 
 # compiled binaries (no extension on Linux)
+fft/baseline/fft_baseline
 fft/pthreads/fft_pthreads
 fft/openmp/fft_omp
 fft/mpi/fft_mpi
+fir/baseline/fft_baseline
 fir/pthreads/fir_pthreads
 fir/openmp/fir_omp
 fir/mpi/fir_mpi
@@ -25,6 +27,7 @@ results/*
 slurm-*.out
 
 # python
+.venv/
 __pycache__/
 *.pyc
 

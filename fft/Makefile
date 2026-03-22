@@ -1,0 +1,13 @@
+CC      = gcc
+CFLAGS  = -O2 -Wall -Wextra
+LDFLAGS = -lm
+
+.PHONY: all clean
+
+all: baseline/fft_baseline
+
+baseline/fft_baseline: baseline/fft_baseline.c
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	rm -f baseline/fft_baseline

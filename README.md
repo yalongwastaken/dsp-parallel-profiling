@@ -24,18 +24,22 @@ The goal is to benchmark and analyze parallel scaling behavior (speedup, efficie
 ├── administrative/            # documents, reports, and write-ups
 ├── data/                      # all input datasets (see Data section)
 ├── fft/
+│   ├── baseline/
 │   ├── mpi/
 │   ├── openmp/
 │   └── pthreads/
 ├── fir/
+│   ├── baseline/
 │   ├── mpi/
 │   ├── openmp/
 │   └── pthreads/
 ├── results/                   # job output logs (gitignored)
 ├── scripts/
-│   ├── generate_input.py      # generates synthetic input CSVs
+│   ├── generate_input.py      # generates synthetic input binaries
+│   ├── submit_baseline.sh     # submits baseline jobs for all process counts 
 │   ├── submit_mpi.sh          # submits MPI jobs for all process counts 
-│   └── submit_omp.sh          # submits OpenMP/Pthreads jobs for all thread counts
+│   ├── submit_omp.sh          # submits OpenMP jobs for all process counts 
+│   └── submit_pthreads.sh     # submits pthreads jobs for all thread counts
 ├── .gitignore
 └── README.md
 ```
@@ -44,8 +48,8 @@ The goal is to benchmark and analyze parallel scaling behavior (speedup, efficie
 
 | Dataset | Size | Source |
 |---------|------|--------|
-| `input_small.csv` | 2^16 samples | Generated via `generate_input.py` |
-| `input_medium.csv` | 2^20 samples | Generated via `generate_input.py` |
+| `input_small.csv` | 2^20 samples | Generated via `generate_input.py` |
+| `input_medium.csv` | 2^24 samples | Generated via `generate_input.py` |
 | `input_large.csv` | ~4M samples | [LibriSpeech](https://www.openslr.org/12) — download manually and convert |
 
 The `data/` directory is gitignored for large files. Ensure to generate or download inputs independently before running jobs.

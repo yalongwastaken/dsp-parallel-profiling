@@ -7,11 +7,11 @@
 # compiled binaries (no extension on Linux)
 fft/baseline/fft_baseline
 fft/pthreads/fft_pthreads
-fft/openmp/fft_omp
+fft/openmp/fft_openmp
 fft/mpi/fft_mpi
 fir/baseline/fft_baseline
 fir/pthreads/fir_pthreads
-fir/openmp/fir_omp
+fir/openmp/fir_openmp
 fir/mpi/fir_mpi
 
 # data files

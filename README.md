@@ -38,7 +38,7 @@ The goal is to benchmark and analyze parallel scaling behavior (speedup, efficie
 │   ├── generate_input.py      # generates synthetic input binaries
 │   ├── submit_baseline.sh     # submits baseline jobs
 │   ├── submit_mpi.sh          # submits MPI jobs for all process counts
-│   ├── submit_omp.sh          # submits OpenMP jobs for all thread counts
+│   ├── submit_openmp.sh       # submits OpenMP jobs for all thread counts
 │   └── submit_pthreads.sh     # submits Pthreads jobs for all thread counts
 ├── .gitignore
 └── README.md
@@ -80,7 +80,7 @@ python3 tests/fir/baseline/test_fir_baseline.py
 
 ```bash
 python3 tests/fft/pthreads/test_fft_pthreads.py
-python3 tests/fft/omp/test_fft_omp.py
+python3 tests/fft/openmp/test_fft_openmp.py
 python3 tests/fft/mpi/test_fft_mpi.py
 # and equivalents under tests/fir/
 ```

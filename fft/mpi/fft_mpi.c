@@ -98,7 +98,7 @@ static void fft(complex_t *x, int n) {
 
                 // rotate twiddle factor by wlen for next butterfly pair
                 double tmp = w.re * wlen.re - w.im * wlen.im;
-                w.im       = w.re * wlen.re + w.im * wlen.im;
+                w.im       = w.re * wlen.im + w.im * wlen.re;
                 w.re       = tmp;
             }
         }

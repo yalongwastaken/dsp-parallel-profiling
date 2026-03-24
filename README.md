@@ -62,6 +62,7 @@ python3 scripts/generate_input.py
 Each workload subdirectory has its own Makefile. From the repo root:
 
 ```bash
+module load OpenMPI/4.1.6
 cd fft && make && cd ../fir && make && cd ..
 ```
 

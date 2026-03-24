@@ -1,4 +1,4 @@
-CC      = gcc-15
+CC      = gcc
 MPICC   = mpicc
 CFLAGS  = -O2 -Wall -Wextra
 LDFLAGS = -lm

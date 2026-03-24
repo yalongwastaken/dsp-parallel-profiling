@@ -18,10 +18,6 @@ fir/mpi/fir_mpi
 data/*
 !data/README.md
 
-# job results
-results/*
-!results/README.md
-
 # slurm logs that land in root
 *.err
 slurm-*.out

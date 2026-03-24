@@ -1,0 +1,190 @@
+=== pthreads ===
+date: Tue Mar 24 04:52:12 PM EDT 2026
+host: d0125
+
+--- dataset: data/input_small.bin (n=1048576) ---
+fft_pthreads n=1048576 threads=1 time_ms=94.3941
+fft_pthreads n=1048576 threads=1 time_ms=90.9829
+fft_pthreads n=1048576 threads=1 time_ms=98.2389
+fft_pthreads n=1048576 threads=1 time_ms=93.3246
+fft_pthreads n=1048576 threads=1 time_ms=97.4119
+fft_pthreads n=1048576 threads=2 time_ms=86.6317
+fft_pthreads n=1048576 threads=2 time_ms=82.1992
+fft_pthreads n=1048576 threads=2 time_ms=82.9889
+fft_pthreads n=1048576 threads=2 time_ms=78.5187
+fft_pthreads n=1048576 threads=2 time_ms=83.6096
+fft_pthreads n=1048576 threads=4 time_ms=75.2800
+fft_pthreads n=1048576 threads=4 time_ms=72.8488
+fft_pthreads n=1048576 threads=4 time_ms=76.0181
+fft_pthreads n=1048576 threads=4 time_ms=70.9493
+fft_pthreads n=1048576 threads=4 time_ms=79.5371
+fft_pthreads n=1048576 threads=8 time_ms=71.8564
+fft_pthreads n=1048576 threads=8 time_ms=69.6718
+fft_pthreads n=1048576 threads=8 time_ms=74.0649
+fft_pthreads n=1048576 threads=8 time_ms=69.4099
+fft_pthreads n=1048576 threads=8 time_ms=73.1346
+fft_pthreads n=1048576 threads=16 time_ms=69.6561
+fft_pthreads n=1048576 threads=16 time_ms=67.7975
+fft_pthreads n=1048576 threads=16 time_ms=66.9208
+fft_pthreads n=1048576 threads=16 time_ms=67.5593
+fft_pthreads n=1048576 threads=16 time_ms=73.2241
+fft_pthreads n=1048576 threads=32 time_ms=71.3043
+fft_pthreads n=1048576 threads=32 time_ms=71.1781
+fft_pthreads n=1048576 threads=32 time_ms=68.9013
+fft_pthreads n=1048576 threads=32 time_ms=65.6701
+fft_pthreads n=1048576 threads=32 time_ms=69.8985
+fir_pthreads n=1048576 taps=101 threads=1 time_ms=117.0005
+fir_pthreads n=1048576 taps=101 threads=1 time_ms=118.5653
+fir_pthreads n=1048576 taps=101 threads=1 time_ms=120.3741
+fir_pthreads n=1048576 taps=101 threads=1 time_ms=118.2925
+fir_pthreads n=1048576 taps=101 threads=1 time_ms=117.9299
+fir_pthreads n=1048576 taps=101 threads=2 time_ms=69.6492
+fir_pthreads n=1048576 taps=101 threads=2 time_ms=68.9714
+fir_pthreads n=1048576 taps=101 threads=2 time_ms=60.7231
+fir_pthreads n=1048576 taps=101 threads=2 time_ms=68.7958
+fir_pthreads n=1048576 taps=101 threads=2 time_ms=63.0154
+fir_pthreads n=1048576 taps=101 threads=4 time_ms=41.1938
+fir_pthreads n=1048576 taps=101 threads=4 time_ms=41.6559
+fir_pthreads n=1048576 taps=101 threads=4 time_ms=40.4843
+fir_pthreads n=1048576 taps=101 threads=4 time_ms=39.8941
+fir_pthreads n=1048576 taps=101 threads=4 time_ms=41.4503
+fir_pthreads n=1048576 taps=101 threads=8 time_ms=26.3818
+fir_pthreads n=1048576 taps=101 threads=8 time_ms=27.4723
+fir_pthreads n=1048576 taps=101 threads=8 time_ms=28.7110
+fir_pthreads n=1048576 taps=101 threads=8 time_ms=25.6039
+fir_pthreads n=1048576 taps=101 threads=8 time_ms=16.7661
+fir_pthreads n=1048576 taps=101 threads=16 time_ms=19.1689
+fir_pthreads n=1048576 taps=101 threads=16 time_ms=18.6765
+fir_pthreads n=1048576 taps=101 threads=16 time_ms=10.3890
+fir_pthreads n=1048576 taps=101 threads=16 time_ms=9.3451
+fir_pthreads n=1048576 taps=101 threads=16 time_ms=8.5005
+fir_pthreads n=1048576 taps=101 threads=32 time_ms=7.9496
+fir_pthreads n=1048576 taps=101 threads=32 time_ms=7.8645
+fir_pthreads n=1048576 taps=101 threads=32 time_ms=7.7938
+fir_pthreads n=1048576 taps=101 threads=32 time_ms=12.6162
+fir_pthreads n=1048576 taps=101 threads=32 time_ms=17.9283
+
+--- dataset: data/input_medium.bin (n=16777216) ---
+fft_pthreads n=16777216 threads=1 time_ms=1804.1642
+fft_pthreads n=16777216 threads=1 time_ms=1816.7026
+fft_pthreads n=16777216 threads=1 time_ms=1800.5334
+fft_pthreads n=16777216 threads=1 time_ms=1849.8155
+fft_pthreads n=16777216 threads=1 time_ms=1801.8247
+fft_pthreads n=16777216 threads=2 time_ms=1534.7365
+fft_pthreads n=16777216 threads=2 time_ms=1544.2109
+fft_pthreads n=16777216 threads=2 time_ms=1581.0745
+fft_pthreads n=16777216 threads=2 time_ms=1537.0692
+fft_pthreads n=16777216 threads=2 time_ms=1536.4758
+fft_pthreads n=16777216 threads=4 time_ms=1387.9327
+fft_pthreads n=16777216 threads=4 time_ms=1389.3108
+fft_pthreads n=16777216 threads=4 time_ms=1455.0503
+fft_pthreads n=16777216 threads=4 time_ms=1393.1097
+fft_pthreads n=16777216 threads=4 time_ms=1405.9679
+fft_pthreads n=16777216 threads=8 time_ms=1292.2789
+fft_pthreads n=16777216 threads=8 time_ms=1349.2676
+fft_pthreads n=16777216 threads=8 time_ms=1338.7789
+fft_pthreads n=16777216 threads=8 time_ms=1348.5014
+fft_pthreads n=16777216 threads=8 time_ms=1301.8253
+fft_pthreads n=16777216 threads=16 time_ms=1293.0706
+fft_pthreads n=16777216 threads=16 time_ms=1236.7885
+fft_pthreads n=16777216 threads=16 time_ms=1230.2066
+fft_pthreads n=16777216 threads=16 time_ms=1300.7538
+fft_pthreads n=16777216 threads=16 time_ms=1241.9563
+fft_pthreads n=16777216 threads=32 time_ms=1288.2703
+fft_pthreads n=16777216 threads=32 time_ms=1284.2304
+fft_pthreads n=16777216 threads=32 time_ms=1287.0405
+fft_pthreads n=16777216 threads=32 time_ms=1283.3607
+fft_pthreads n=16777216 threads=32 time_ms=1281.3182
+fir_pthreads n=16777216 taps=101 threads=1 time_ms=1707.9029
+fir_pthreads n=16777216 taps=101 threads=1 time_ms=1709.1506
+fir_pthreads n=16777216 taps=101 threads=1 time_ms=1709.1708
+fir_pthreads n=16777216 taps=101 threads=1 time_ms=1705.0143
+fir_pthreads n=16777216 taps=101 threads=1 time_ms=1704.1078
+fir_pthreads n=16777216 taps=101 threads=2 time_ms=902.7439
+fir_pthreads n=16777216 taps=101 threads=2 time_ms=901.9783
+fir_pthreads n=16777216 taps=101 threads=2 time_ms=901.8334
+fir_pthreads n=16777216 taps=101 threads=2 time_ms=901.0652
+fir_pthreads n=16777216 taps=101 threads=2 time_ms=897.7237
+fir_pthreads n=16777216 taps=101 threads=4 time_ms=468.8752
+fir_pthreads n=16777216 taps=101 threads=4 time_ms=471.0557
+fir_pthreads n=16777216 taps=101 threads=4 time_ms=468.1641
+fir_pthreads n=16777216 taps=101 threads=4 time_ms=468.5625
+fir_pthreads n=16777216 taps=101 threads=4 time_ms=467.7155
+fir_pthreads n=16777216 taps=101 threads=8 time_ms=242.7570
+fir_pthreads n=16777216 taps=101 threads=8 time_ms=239.7224
+fir_pthreads n=16777216 taps=101 threads=8 time_ms=239.5073
+fir_pthreads n=16777216 taps=101 threads=8 time_ms=238.4009
+fir_pthreads n=16777216 taps=101 threads=8 time_ms=240.5299
+fir_pthreads n=16777216 taps=101 threads=16 time_ms=144.4608
+fir_pthreads n=16777216 taps=101 threads=16 time_ms=144.8475
+fir_pthreads n=16777216 taps=101 threads=16 time_ms=139.2762
+fir_pthreads n=16777216 taps=101 threads=16 time_ms=139.5911
+fir_pthreads n=16777216 taps=101 threads=16 time_ms=136.7032
+fir_pthreads n=16777216 taps=101 threads=32 time_ms=125.1815
+fir_pthreads n=16777216 taps=101 threads=32 time_ms=128.4147
+fir_pthreads n=16777216 taps=101 threads=32 time_ms=128.9832
+fir_pthreads n=16777216 taps=101 threads=32 time_ms=124.6393
+fir_pthreads n=16777216 taps=101 threads=32 time_ms=125.1411
+
+--- dataset: data/input_large.bin (n=67108864) ---
+fft_pthreads n=67108864 threads=1 time_ms=8096.9207
+fft_pthreads n=67108864 threads=1 time_ms=8030.3263
+fft_pthreads n=67108864 threads=1 time_ms=8106.7466
+fft_pthreads n=67108864 threads=1 time_ms=8159.3035
+fft_pthreads n=67108864 threads=1 time_ms=8106.2100
+fft_pthreads n=67108864 threads=2 time_ms=6914.5722
+fft_pthreads n=67108864 threads=2 time_ms=6916.1635
+fft_pthreads n=67108864 threads=2 time_ms=6906.8371
+fft_pthreads n=67108864 threads=2 time_ms=6920.5867
+fft_pthreads n=67108864 threads=2 time_ms=6929.9853
+fft_pthreads n=67108864 threads=4 time_ms=6209.8557
+fft_pthreads n=67108864 threads=4 time_ms=6212.0048
+fft_pthreads n=67108864 threads=4 time_ms=6303.6018
+fft_pthreads n=67108864 threads=4 time_ms=6312.4123
+fft_pthreads n=67108864 threads=4 time_ms=6257.2471
+fft_pthreads n=67108864 threads=8 time_ms=5871.5884
+fft_pthreads n=67108864 threads=8 time_ms=5836.4267
+fft_pthreads n=67108864 threads=8 time_ms=5858.8229
+fft_pthreads n=67108864 threads=8 time_ms=5839.5736
+fft_pthreads n=67108864 threads=8 time_ms=5713.6050
+fft_pthreads n=67108864 threads=16 time_ms=5525.2273
+fft_pthreads n=67108864 threads=16 time_ms=5615.2488
+fft_pthreads n=67108864 threads=16 time_ms=5624.0302
+fft_pthreads n=67108864 threads=16 time_ms=5477.2935
+fft_pthreads n=67108864 threads=16 time_ms=5620.6491
+fft_pthreads n=67108864 threads=32 time_ms=5573.1026
+fft_pthreads n=67108864 threads=32 time_ms=5584.2956
+fft_pthreads n=67108864 threads=32 time_ms=5581.5863
+fft_pthreads n=67108864 threads=32 time_ms=5586.9613
+fft_pthreads n=67108864 threads=32 time_ms=5581.9258
+fir_pthreads n=67108864 taps=101 threads=1 time_ms=6779.3283
+fir_pthreads n=67108864 taps=101 threads=1 time_ms=6786.7003
+fir_pthreads n=67108864 taps=101 threads=1 time_ms=6781.3484
+fir_pthreads n=67108864 taps=101 threads=1 time_ms=6785.8154
+fir_pthreads n=67108864 taps=101 threads=1 time_ms=6783.4855
+fir_pthreads n=67108864 taps=101 threads=2 time_ms=3571.3202
+fir_pthreads n=67108864 taps=101 threads=2 time_ms=3572.8760
+fir_pthreads n=67108864 taps=101 threads=2 time_ms=3569.6433
+fir_pthreads n=67108864 taps=101 threads=2 time_ms=3569.1425
+fir_pthreads n=67108864 taps=101 threads=2 time_ms=3569.4389
+fir_pthreads n=67108864 taps=101 threads=4 time_ms=1839.0159
+fir_pthreads n=67108864 taps=101 threads=4 time_ms=1838.5861
+fir_pthreads n=67108864 taps=101 threads=4 time_ms=1837.3897
+fir_pthreads n=67108864 taps=101 threads=4 time_ms=1840.6235
+fir_pthreads n=67108864 taps=101 threads=4 time_ms=1838.7923
+fir_pthreads n=67108864 taps=101 threads=8 time_ms=927.8541
+fir_pthreads n=67108864 taps=101 threads=8 time_ms=938.2156
+fir_pthreads n=67108864 taps=101 threads=8 time_ms=994.0733
+fir_pthreads n=67108864 taps=101 threads=8 time_ms=985.5274
+fir_pthreads n=67108864 taps=101 threads=8 time_ms=989.3584
+fir_pthreads n=67108864 taps=101 threads=16 time_ms=534.1187
+fir_pthreads n=67108864 taps=101 threads=16 time_ms=542.1355
+fir_pthreads n=67108864 taps=101 threads=16 time_ms=542.1254
+fir_pthreads n=67108864 taps=101 threads=16 time_ms=545.1795
+fir_pthreads n=67108864 taps=101 threads=16 time_ms=786.8663
+fir_pthreads n=67108864 taps=101 threads=32 time_ms=491.2840
+fir_pthreads n=67108864 taps=101 threads=32 time_ms=486.4429
+fir_pthreads n=67108864 taps=101 threads=32 time_ms=484.4809
+fir_pthreads n=67108864 taps=101 threads=32 time_ms=484.7274
+fir_pthreads n=67108864 taps=101 threads=32 time_ms=484.2803
+

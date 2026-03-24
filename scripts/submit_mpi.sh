@@ -6,7 +6,7 @@
 #SBATCH --ntasks=32
 #SBATCH --cpus-per-task=1
 #SBATCH --time=02:00:00
-#SBATCH --reservation=courses
+#SBATCH --partition=courses
 
 # --- configuration -----------------------------------------------------------
 RUNS=5                          # number of timed runs per configuration

@@ -1,0 +1,40 @@
+=== baseline ===
+date: Tue Mar 24 04:27:06 PM EDT 2026
+host: c0584
+
+--- dataset: data/input_small.bin (n=1048576) ---
+fft_baseline n=1048576 time_ms=127.5754
+fft_baseline n=1048576 time_ms=127.5067
+fft_baseline n=1048576 time_ms=123.3422
+fft_baseline n=1048576 time_ms=126.6862
+fft_baseline n=1048576 time_ms=127.4585
+fir_baseline n=1048576 taps=101 time_ms=120.5594
+fir_baseline n=1048576 taps=101 time_ms=120.3096
+fir_baseline n=1048576 taps=101 time_ms=120.6017
+fir_baseline n=1048576 taps=101 time_ms=120.6362
+fir_baseline n=1048576 taps=101 time_ms=120.3928
+
+--- dataset: data/input_medium.bin (n=16777216) ---
+fft_baseline n=16777216 time_ms=2627.2456
+fft_baseline n=16777216 time_ms=2638.5818
+fft_baseline n=16777216 time_ms=2642.7741
+fft_baseline n=16777216 time_ms=2635.9927
+fft_baseline n=16777216 time_ms=2617.2769
+fir_baseline n=16777216 taps=101 time_ms=1917.8753
+fir_baseline n=16777216 taps=101 time_ms=1917.6405
+fir_baseline n=16777216 taps=101 time_ms=1917.8537
+fir_baseline n=16777216 taps=101 time_ms=1917.6084
+fir_baseline n=16777216 taps=101 time_ms=1917.3027
+
+--- dataset: data/input_large.bin (n=67108864) ---
+fft_baseline n=67108864 time_ms=12247.9787
+fft_baseline n=67108864 time_ms=12067.4563
+fft_baseline n=67108864 time_ms=11978.5704
+fft_baseline n=67108864 time_ms=11944.0249
+fft_baseline n=67108864 time_ms=11946.1139
+fir_baseline n=67108864 taps=101 time_ms=7786.0635
+fir_baseline n=67108864 taps=101 time_ms=7784.5212
+fir_baseline n=67108864 taps=101 time_ms=7780.2570
+fir_baseline n=67108864 taps=101 time_ms=7780.8814
+fir_baseline n=67108864 taps=101 time_ms=7777.2220
+

@@ -20,7 +20,7 @@ typedef struct { double re, im; } complex_t;
 
 // precomputed parameters for each butterfly stage; avoids main/worker races
 typedef struct {
-    int    len;     // butterfly width for this stage
+    long   len;     // butterfly width for this stage
     double ang;     // twiddle base angle: -2*pi / len
 } stage_t;
 
@@ -191,12 +191,13 @@ static void *fft_thread(void *arg) {
 
         complex_t wlen = { cos(ang), sin(ang) };
 
-        // each thread handles every nt-th group starting from tid
-        for (int i = tid * len; i < n; i += nt * len) {
+        // each thread handles every nt-th group starting from tid;
+        // use long to avoid overflow when tid * len exceeds INT_MAX on large n
+        for (long i = (long)tid * len; i < n; i += (long)nt * len) {
             complex_t w = { 1.0, 0.0 };     // twiddle factor, starts at w^0
 
             // butterfly between upper and lower halves of this group
-            for (int j = 0; j < len / 2; j++) {
+            for (long j = 0; j < len / 2; j++) {
                 complex_t u = shared->x[i + j];
                 // multiply lower-half element by current twiddle factor
                 complex_t v = {
@@ -228,11 +229,11 @@ static void fft_parallel(complex_t *x, int n, int num_threads) {
     // precompute all stage parameters so workers read from a fixed array;
     // eliminates any race between main updating shared state and workers reading it
     int num_stages = 0;
-    for (int len = 2; len <= n; len <<= 1) { num_stages++; }
+    for (long len = 2; len <= n; len <<= 1) { num_stages++; }
 
     stage_t *stages = malloc(num_stages * sizeof(stage_t));
     int s = 0;
-    for (int len = 2; len <= n; len <<= 1) {
+    for (long len = 2; len <= n; len <<= 1) {
         stages[s].len = len;
         stages[s].ang = -2.0 * PI / len;
         s++;
@@ -245,7 +246,7 @@ static void fft_parallel(complex_t *x, int n, int num_threads) {
     pthread_t    *threads = malloc(num_threads * sizeof(pthread_t));
     thread_arg_t *args    = malloc(num_threads * sizeof(thread_arg_t));
 
-    // set stack size explicitly to avoid overflow on large inputs with many threads
+    // set stack size explicitly; default can be insufficient at 32 threads on large inputs
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     pthread_attr_setstacksize(&attr, 8 * 1024 * 1024);  // 8MB per thread

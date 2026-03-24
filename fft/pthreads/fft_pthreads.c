@@ -98,7 +98,7 @@ static void *fft_thread(void *arg);
  * @brief  spawn num_threads workers to compute the in-place parallel fft of x
  * @param  x           complex sample array, length n; overwritten in-place
  * @param  n           number of samples, must be a power of 2
- * @param  num_threads number of pthreads to use
+ * @param  num_threads number of pthreads to use; stack size set to 8MB per thread
  */
 static void fft_parallel(complex_t *x, int n, int num_threads);
 
@@ -245,16 +245,23 @@ static void fft_parallel(complex_t *x, int n, int num_threads) {
     pthread_t    *threads = malloc(num_threads * sizeof(pthread_t));
     thread_arg_t *args    = malloc(num_threads * sizeof(thread_arg_t));
 
+    // set stack size explicitly to avoid overflow on large inputs with many threads
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    pthread_attr_setstacksize(&attr, 8 * 1024 * 1024);  // 8MB per thread
+
     for (int i = 0; i < num_threads; i++) {
         args[i].tid     = i;
         args[i].shared  = &shared;
         args[i].barrier = &barrier;
-        pthread_create(&threads[i], NULL, fft_thread, &args[i]);
+        pthread_create(&threads[i], &attr, fft_thread, &args[i]);
     }
 
     for (int i = 0; i < num_threads; i++) {
         pthread_join(threads[i], NULL);
     }
+
+    pthread_attr_destroy(&attr);
 
     barrier_destroy(&barrier);
     free(stages);

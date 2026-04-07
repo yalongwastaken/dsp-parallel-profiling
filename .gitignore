@@ -1,15 +1,14 @@
 # build artifacts
 *.o
-*.out
 *.a
 *.so
 
-# compiled binaries (no extension on Linux)
+# compiled binaries
 fft/baseline/fft_baseline
 fft/pthreads/fft_pthreads
 fft/openmp/fft_openmp
 fft/mpi/fft_mpi
-fir/baseline/fft_baseline
+fir/baseline/fir_baseline
 fir/pthreads/fir_pthreads
 fir/openmp/fir_openmp
 fir/mpi/fir_mpi
@@ -18,19 +17,15 @@ fir/mpi/fir_mpi
 data/*
 !data/README.md
 
-# slurm logs that land in root
-*.err
-slurm-*.out
-
 # python
 .venv/
 __pycache__/
 *.pyc
 
-# docx
+# word processor lock files
 ~$*.docx
 
-# editor/OS
+# editor / os
 .vscode/
 .idea/
 .DS_Store

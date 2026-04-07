@@ -27,6 +27,9 @@ DATASETS=(
 
 module load OpenMPI/4.1.6
 
+# build all targets
+cd fft && make && cd ../fir && make && cd ..
+
 echo "=== mpi ==="
 echo "date: $(date)"
 echo "host: $(hostname)"

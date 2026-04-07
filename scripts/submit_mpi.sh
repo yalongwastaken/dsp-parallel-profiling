@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=32
 #SBATCH --cpus-per-task=1
-#SBATCH --time=02:00:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=courses
 
 # --- configuration -----------------------------------------------------------
@@ -14,15 +14,17 @@ NUM_TAPS=101                    # fir filter taps
 CUTOFF=0.1                      # fir normalized cutoff frequency
 PROC_COUNTS=(1 2 4 8 16 32)    # process counts to sweep
 
-# datasets
-DATASETS=(
-    "data/input_small_downloaded.bin   1048576"    # 2^20
-    "data/input_medium_downloaded.bin  16777216"   # 2^24
-    "data/input_large_downloaded.bin   67108864"   # 2^26
-    "data/input_small_generated.bin   1048576"    # 2^20
-    "data/input_medium_generated.bin  16777216"   # 2^24
-    "data/input_large_generated.bin   67108864"   # 2^26
-)
+# dataset sizes as exponents — override at submit time with:
+# SIZES="20 22 24 26 28" sbatch scripts/submit_mpi.sh
+SIZES=${SIZES:-"20 24 26"}
+
+# build dataset array dynamically from exponents
+DATASETS=()
+for exp in $SIZES; do
+    n=$((2**exp))
+    DATASETS+=("data/input_${n}_generated.bin   ${n}")
+    DATASETS+=("data/input_${n}_downloaded.bin  ${n}")
+done
 # -----------------------------------------------------------------------------
 
 module load OpenMPI/4.1.6

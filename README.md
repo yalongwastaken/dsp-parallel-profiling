@@ -60,17 +60,21 @@ The goal is to benchmark and analyze parallel scaling behavior (speedup, efficie
 
 ## Data
 
-Both input pipelines produce three dataset sizes at 16kHz float32:
+Both input pipelines produce datasets at 16kHz float32. Sizes are configurable via the `SIZES` environment variable as a space-separated list of exponents. Default is `"20 24 26"`.
 
-| Dataset | Samples | Size |
-|---------|---------|------|
-| small | 2^20 | ~4 MB |
-| medium | 2^24 | ~64 MB |
-| large | 2^26 | ~256 MB |
+| Exponent | Samples | Size |
+|----------|---------|------|
+| 2^20 | 1,048,576 | ~4 MB |
+| 2^24 | 16,777,216 | ~64 MB |
+| 2^26 | 67,108,864 | ~256 MB |
+| 2^28 | 268,435,456 | ~1 GB |
+| 2^30 | 1,073,741,824 | ~4 GB |
 
-**Synthetic** inputs are multi-tone sine waves with Gaussian noise, generated via `generate_input.py`. Output files are named `input_{size}_generated.bin`.
+Output files follow the naming convention `data/input_{n}_generated.bin` and `data/input_{n}_downloaded.bin` where `n` is the number of samples.
 
-**Real-world** inputs are sourced from the [LibriSpeech](https://www.openslr.org/12) dev-clean corpus, resampled to 16kHz and trimmed/tiled to exact sample counts via `download_dataset.py`. Output files are named `input_{size}_downloaded.bin`.
+**Synthetic** inputs are multi-tone sine waves with Gaussian noise, generated via `generate_input.py`.
+
+**Real-world** inputs are sourced from the [LibriSpeech](https://www.openslr.org/12) dev-clean corpus, resampled to 16kHz and trimmed/tiled to exact sample counts via `download_dataset.py`.
 
 The `data/` directory is gitignored due to file size. Generate or download inputs before running any jobs.
 
@@ -106,7 +110,6 @@ module load OpenMPI/4.1.6
 module load python/3.13.5
 
 # activate virtual environment (numpy and soundfile must be installed)
-python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -115,14 +118,24 @@ pip install -r requirements.txt
 
 **On Explorer (recommended — avoids daemon killing long processes):**
 ```bash
-sbatch scripts/submit_generate.sh   # synthetic data
-sbatch scripts/submit_download.sh   # librispeech data
+# default sizes (2^20, 2^24, 2^26)
+sbatch scripts/submit_generate.sh
+sbatch scripts/submit_download.sh
+
+# custom sizes — any space-separated list of exponents
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_generate.sh
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_download.sh
 ```
 
 **Locally:**
 ```bash
+# default sizes
 python3 scripts/generate_input.py
 python3 scripts/download_dataset.py
+
+# custom sizes
+SIZES="20 22 24 26" python3 scripts/generate_input.py
+SIZES="20 22 24 26" python3 scripts/download_dataset.py
 ```
 
 Both scripts write to `data/` and will overwrite existing files.
@@ -181,13 +194,20 @@ mpirun -np <nprocs> ./fir/mpi/fir_mpi <input.bin> <n_samples> <num_taps> <cutoff
 
 ## Submitting Jobs on Explorer
 
-Each submission script runs both FFT and FIR across all thread/process counts and all six datasets (3 sizes × 2 input types). Make sure `results/` exists and both input pipelines have been run before submitting.
+Each submission script runs both FFT and FIR across all thread/process counts and all datasets (both generated and downloaded). Make sure both input pipelines have been run before submitting. The `SIZES` variable must match what was used during data generation.
 
 ```bash
+# default sizes
 sbatch scripts/submit_baseline.sh
 sbatch scripts/submit_pthreads.sh
 sbatch scripts/submit_openmp.sh
 sbatch scripts/submit_mpi.sh
+
+# custom sizes
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_baseline.sh
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_pthreads.sh
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_openmp.sh
+SIZES="20 21 22 23 24 25 26 27 28 29 30" sbatch scripts/submit_mpi.sh
 ```
 
 Monitor and retrieve results:

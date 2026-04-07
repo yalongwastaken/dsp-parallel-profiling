@@ -2,8 +2,11 @@
 # author:      Vaidehi Gohil, Anthony Yalong
 # description: downloads a librispeech audio file, concatenates enough audio to
 #              meet the required sample counts, resamples to 16kHz, and writes
-#              three binary float32 files matching the synthetic dataset sizes.
+#              binary float32 files matching the specified dataset sizes.
+#              dataset sizes are configurable via the SIZES environment variable
+#              as a space-separated list of exponents (e.g. SIZES="20 24 26")
 # usage:       python3 scripts/download_dataset.py
+#              SIZES="20 22 24 26 28" python3 scripts/download_dataset.py
 
 import os
 import ssl
@@ -11,12 +14,10 @@ import urllib.request
 import tarfile
 import numpy as np
 
-# target sample counts must match synthetic dataset sizes
-DATASETS = {
-    "small":  2**20,    # ~1M samples
-    "medium": 2**24,    # ~16M samples
-    "large":  2**26,    # ~67M samples
-}
+# target sample counts — configurable via SIZES env var (space-separated exponents)
+# default: 20 24 26
+SIZES_ENV = os.environ.get("SIZES", "20 24 26")
+DATASETS  = {2**int(e): 2**int(e) for e in SIZES_ENV.split()}
 
 TARGET_SR   = 16000             # hz — matches generate_input.py
 OUTPUT_DIR  = "data"
@@ -33,14 +34,26 @@ SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 
 def download_tarball(url, dest):
-    """Download tarball from url to dest if not already present."""
+    """Download tarball from url to dest in chunks if not already present."""
     if os.path.exists(dest):
         print(f"  already downloaded: {dest}")
         return
     print(f"  downloading {url} ...")
     with urllib.request.urlopen(url, context=SSL_CONTEXT) as response:
+        total = response.headers.get("Content-Length")
+        total = int(total) if total else None
         with open(dest, "wb") as f:
-            f.write(response.read())
+            chunk_size = 8 * 1024 * 1024  # 8MB chunks
+            downloaded = 0
+            while True:
+                chunk = response.read(chunk_size)
+                if not chunk:
+                    break
+                f.write(chunk)
+                downloaded += len(chunk)
+                if total:
+                    pct = downloaded / total * 100
+                    print(f"  {downloaded // (1024*1024)}MB / {total // (1024*1024)}MB ({pct:.1f}%)", flush=True)
     print(f"  saved to {dest}")
 
 
@@ -114,8 +127,8 @@ def main():
     print(f"  total samples loaded: {len(audio):,} ({len(audio)/TARGET_SR:.1f}s at {TARGET_SR}Hz)")
 
     # write each dataset by tiling audio if not long enough
-    for name, n_samples in DATASETS.items():
-        print(f"generating {name} ({n_samples:,} samples) ...")
+    for n_samples, _ in DATASETS.items():
+        print(f"generating n=2^{int(np.log2(n_samples))} ({n_samples:,} samples) ...")
 
         if len(audio) < n_samples:
             # tile audio to reach required length
@@ -126,7 +139,7 @@ def main():
 
         # trim to exact size
         out = tiled[:n_samples].astype(np.float32)
-        write_binary(out, os.path.join(OUTPUT_DIR, f"input_{name}_downloaded.bin"))
+        write_binary(out, os.path.join(OUTPUT_DIR, f"input_{n_samples}_downloaded.bin"))
 
     print("done.")
     print(f"\nnote: temp files left in {EXTRACT_DIR}/ and {TARBALL}")

@@ -13,11 +13,14 @@ RUNS=5                          # number of timed runs per configuration
 NUM_TAPS=101                    # fir filter taps
 CUTOFF=0.1                      # fir normalized cutoff frequency
 
-# dataset sizes — adjust or comment out as needed
+# datasets
 DATASETS=(
-    "data/input_small.bin   1048576"    # 2^20
-    "data/input_medium.bin  16777216"   # 2^24
-    "data/input_large.bin   67108864"   # 2^26
+    "data/input_small_downloaded.bin   1048576"    # 2^20
+    "data/input_medium_downloaded.bin  16777216"   # 2^24
+    "data/input_large_downloaded.bin   67108864"   # 2^26
+    "data/input_small_generated.bin   1048576"    # 2^20
+    "data/input_medium_generated.bin  16777216"   # 2^24
+    "data/input_large_generated.bin   67108864"   # 2^26
 )
 # -----------------------------------------------------------------------------
 

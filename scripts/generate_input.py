@@ -24,7 +24,7 @@ def main():
         signal = generate_signal(n_samples, sample_rate)
 
         # save
-        path = f"data/input_{name}.bin"
+        path = f"data/input_{name}_generated.bin"
         signal.tofile(path)
         size_mb = os.path.getsize(path) / (1024 ** 2)
         print(f"  -> {path} ({size_mb:.1f} MB)")

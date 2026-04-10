@@ -26,7 +26,7 @@ def main():
         print(f"generating n=2^{int(np.log2(n_samples))} ({n_samples:,} samples)...", flush=True)
         signal = generate_signal(n_samples, sample_rate)
 
-        path = f"data/input_{n_samples}_generated.bin"
+        path = f"data/input_{int(np.log2(n_samples))}_generated.bin"
         signal.tofile(path)
 
         size_mb = os.path.getsize(path) / (1024 ** 2)

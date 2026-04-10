@@ -22,8 +22,8 @@ SIZES=${SIZES:-"20 24 26"}
 DATASETS=()
 for exp in $SIZES; do
     n=$((2**exp))
-    DATASETS+=("data/input_${n}_generated.bin   ${n}")
-    DATASETS+=("data/input_${n}_downloaded.bin  ${n}")
+    DATASETS+=("data/input_${exp}_generated.bin   ${n}")
+    DATASETS+=("data/input_${exp}_downloaded.bin  ${n}")
 done
 # -----------------------------------------------------------------------------
 

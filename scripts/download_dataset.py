@@ -139,7 +139,7 @@ def main():
 
         # trim to exact size
         out = tiled[:n_samples].astype(np.float32)
-        write_binary(out, os.path.join(OUTPUT_DIR, f"input_{n_samples}_downloaded.bin"))
+        write_binary(out, os.path.join(OUTPUT_DIR, f"input_{int(np.log2(n_samples))}_downloaded.bin"))
 
     print("done.")
     print(f"\nnote: temp files left in {EXTRACT_DIR}/ and {TARBALL}")

@@ -70,7 +70,7 @@ Both input pipelines produce datasets at 16kHz float32. Sizes are configurable v
 | 2^28 | 268,435,456 | ~1 GB |
 | 2^30 | 1,073,741,824 | ~4 GB |
 
-Output files follow the naming convention `data/input_{n}_generated.bin` and `data/input_{n}_downloaded.bin` where `n` is the number of samples.
+Output files follow the naming convention `data/input_{exp}_generated.bin` and `data/input_{exp}_downloaded.bin` where `exp` is the size exponent (e.g. `input_20_generated.bin` for 2^20 samples).
 
 **Synthetic** inputs are multi-tone sine waves with Gaussian noise, generated via `generate_input.py`.
 
@@ -110,6 +110,7 @@ module load OpenMPI/4.1.6
 module load python/3.13.5
 
 # activate virtual environment (numpy and soundfile must be installed)
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```

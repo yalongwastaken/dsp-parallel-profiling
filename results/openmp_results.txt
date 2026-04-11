@@ -1,190 +1,1275 @@
 === openmp ===
-date: Tue Mar 24 04:27:17 PM EDT 2026
-host: d0125
+date: Fri Apr 10 10:26:22 AM EDT 2026
+host: d0135
 
---- dataset: data/input_small.bin (n=1048576) ---
-fft_openmp n=1048576 threads=1 time_ms=83.0048
-fft_openmp n=1048576 threads=1 time_ms=86.7712
-fft_openmp n=1048576 threads=1 time_ms=84.5912
-fft_openmp n=1048576 threads=1 time_ms=85.7352
-fft_openmp n=1048576 threads=1 time_ms=82.7873
-fft_openmp n=1048576 threads=2 time_ms=84.7029
-fft_openmp n=1048576 threads=2 time_ms=82.0191
-fft_openmp n=1048576 threads=2 time_ms=80.2247
-fft_openmp n=1048576 threads=2 time_ms=81.8887
-fft_openmp n=1048576 threads=2 time_ms=85.8411
-fft_openmp n=1048576 threads=4 time_ms=74.7473
-fft_openmp n=1048576 threads=4 time_ms=70.4534
-fft_openmp n=1048576 threads=4 time_ms=68.6181
-fft_openmp n=1048576 threads=4 time_ms=63.0644
-fft_openmp n=1048576 threads=4 time_ms=75.3881
-fft_openmp n=1048576 threads=8 time_ms=69.8321
-fft_openmp n=1048576 threads=8 time_ms=63.9395
-fft_openmp n=1048576 threads=8 time_ms=66.2360
-fft_openmp n=1048576 threads=8 time_ms=66.1485
-fft_openmp n=1048576 threads=8 time_ms=70.8035
-fft_openmp n=1048576 threads=16 time_ms=64.2560
-fft_openmp n=1048576 threads=16 time_ms=64.2065
-fft_openmp n=1048576 threads=16 time_ms=63.6689
-fft_openmp n=1048576 threads=16 time_ms=62.2136
-fft_openmp n=1048576 threads=16 time_ms=64.0804
-fft_openmp n=1048576 threads=32 time_ms=68.2375
-fft_openmp n=1048576 threads=32 time_ms=61.2011
-fft_openmp n=1048576 threads=32 time_ms=62.7204
-fft_openmp n=1048576 threads=32 time_ms=62.6453
-fft_openmp n=1048576 threads=32 time_ms=60.2303
-fir_openmp n=1048576 taps=101 threads=1 time_ms=114.9254
-fir_openmp n=1048576 taps=101 threads=1 time_ms=114.6927
-fir_openmp n=1048576 taps=101 threads=1 time_ms=114.9274
-fir_openmp n=1048576 taps=101 threads=1 time_ms=110.5334
-fir_openmp n=1048576 taps=101 threads=1 time_ms=110.0606
-fir_openmp n=1048576 taps=101 threads=2 time_ms=66.0326
-fir_openmp n=1048576 taps=101 threads=2 time_ms=61.0022
-fir_openmp n=1048576 taps=101 threads=2 time_ms=56.4704
-fir_openmp n=1048576 taps=101 threads=2 time_ms=62.0898
-fir_openmp n=1048576 taps=101 threads=2 time_ms=65.2284
-fir_openmp n=1048576 taps=101 threads=4 time_ms=40.5647
-fir_openmp n=1048576 taps=101 threads=4 time_ms=42.1398
-fir_openmp n=1048576 taps=101 threads=4 time_ms=39.1036
-fir_openmp n=1048576 taps=101 threads=4 time_ms=39.5274
-fir_openmp n=1048576 taps=101 threads=4 time_ms=39.1821
-fir_openmp n=1048576 taps=101 threads=8 time_ms=27.5646
-fir_openmp n=1048576 taps=101 threads=8 time_ms=28.0006
-fir_openmp n=1048576 taps=101 threads=8 time_ms=25.6336
-fir_openmp n=1048576 taps=101 threads=8 time_ms=26.1500
-fir_openmp n=1048576 taps=101 threads=8 time_ms=25.0545
-fir_openmp n=1048576 taps=101 threads=16 time_ms=17.0225
-fir_openmp n=1048576 taps=101 threads=16 time_ms=10.0609
-fir_openmp n=1048576 taps=101 threads=16 time_ms=7.7688
-fir_openmp n=1048576 taps=101 threads=16 time_ms=8.0146
-fir_openmp n=1048576 taps=101 threads=16 time_ms=7.8335
-fir_openmp n=1048576 taps=101 threads=32 time_ms=6.7105
-fir_openmp n=1048576 taps=101 threads=32 time_ms=6.8227
-fir_openmp n=1048576 taps=101 threads=32 time_ms=6.6113
-fir_openmp n=1048576 taps=101 threads=32 time_ms=6.7332
-fir_openmp n=1048576 taps=101 threads=32 time_ms=6.6813
+--- dataset: data/input_20_generated.bin (n=1048576) ---
+fft_openmp n=1048576 threads=1 time_ms=100.9234
+fft_openmp n=1048576 threads=1 time_ms=102.6855
+fft_openmp n=1048576 threads=1 time_ms=101.9788
+fft_openmp n=1048576 threads=1 time_ms=102.7545
+fft_openmp n=1048576 threads=1 time_ms=102.3116
+fft_openmp n=1048576 threads=2 time_ms=86.9167
+fft_openmp n=1048576 threads=2 time_ms=88.1062
+fft_openmp n=1048576 threads=2 time_ms=86.2595
+fft_openmp n=1048576 threads=2 time_ms=86.6754
+fft_openmp n=1048576 threads=2 time_ms=85.9740
+fft_openmp n=1048576 threads=4 time_ms=76.4527
+fft_openmp n=1048576 threads=4 time_ms=78.7349
+fft_openmp n=1048576 threads=4 time_ms=76.3573
+fft_openmp n=1048576 threads=4 time_ms=77.9366
+fft_openmp n=1048576 threads=4 time_ms=77.4839
+fft_openmp n=1048576 threads=8 time_ms=75.2623
+fft_openmp n=1048576 threads=8 time_ms=75.7124
+fft_openmp n=1048576 threads=8 time_ms=74.6792
+fft_openmp n=1048576 threads=8 time_ms=74.6678
+fft_openmp n=1048576 threads=8 time_ms=74.8247
+fft_openmp n=1048576 threads=16 time_ms=75.1971
+fft_openmp n=1048576 threads=16 time_ms=73.8484
+fft_openmp n=1048576 threads=16 time_ms=72.6271
+fft_openmp n=1048576 threads=16 time_ms=72.9192
+fft_openmp n=1048576 threads=16 time_ms=72.0925
+fft_openmp n=1048576 threads=32 time_ms=72.2109
+fft_openmp n=1048576 threads=32 time_ms=72.4148
+fft_openmp n=1048576 threads=32 time_ms=72.8005
+fft_openmp n=1048576 threads=32 time_ms=73.5770
+fft_openmp n=1048576 threads=32 time_ms=73.7238
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.7784
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.2060
+fir_openmp n=1048576 taps=101 threads=1 time_ms=90.4890
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.7195
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.2200
+fir_openmp n=1048576 taps=101 threads=2 time_ms=46.2045
+fir_openmp n=1048576 taps=101 threads=2 time_ms=46.0568
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.8111
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.2095
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.3831
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.1585
+fir_openmp n=1048576 taps=101 threads=4 time_ms=22.9945
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.0726
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.1106
+fir_openmp n=1048576 taps=101 threads=4 time_ms=22.7545
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.5775
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.6275
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.6848
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.6469
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.6335
+fir_openmp n=1048576 taps=101 threads=16 time_ms=7.0222
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.4099
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.3699
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.2588
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.5893
+fir_openmp n=1048576 taps=101 threads=32 time_ms=4.2209
+fir_openmp n=1048576 taps=101 threads=32 time_ms=4.0696
+fir_openmp n=1048576 taps=101 threads=32 time_ms=4.0257
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.9536
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.7660
 
---- dataset: data/input_medium.bin (n=16777216) ---
-fft_openmp n=16777216 threads=1 time_ms=1898.0698
-fft_openmp n=16777216 threads=1 time_ms=1827.0243
-fft_openmp n=16777216 threads=1 time_ms=1851.8532
-fft_openmp n=16777216 threads=1 time_ms=1830.7474
-fft_openmp n=16777216 threads=1 time_ms=1891.6338
-fft_openmp n=16777216 threads=2 time_ms=1467.8267
-fft_openmp n=16777216 threads=2 time_ms=1497.4228
-fft_openmp n=16777216 threads=2 time_ms=1520.5296
-fft_openmp n=16777216 threads=2 time_ms=1472.8371
-fft_openmp n=16777216 threads=2 time_ms=1537.8913
-fft_openmp n=16777216 threads=4 time_ms=1299.3477
-fft_openmp n=16777216 threads=4 time_ms=1305.8516
-fft_openmp n=16777216 threads=4 time_ms=1293.9411
-fft_openmp n=16777216 threads=4 time_ms=1297.5927
-fft_openmp n=16777216 threads=4 time_ms=1316.0807
-fft_openmp n=16777216 threads=8 time_ms=1296.2885
-fft_openmp n=16777216 threads=8 time_ms=1238.2009
-fft_openmp n=16777216 threads=8 time_ms=1260.8462
-fft_openmp n=16777216 threads=8 time_ms=1237.8790
-fft_openmp n=16777216 threads=8 time_ms=1238.9967
-fft_openmp n=16777216 threads=16 time_ms=1244.2583
-fft_openmp n=16777216 threads=16 time_ms=1210.0762
-fft_openmp n=16777216 threads=16 time_ms=1278.9784
-fft_openmp n=16777216 threads=16 time_ms=1256.0710
-fft_openmp n=16777216 threads=16 time_ms=1221.4630
-fft_openmp n=16777216 threads=32 time_ms=1272.0967
-fft_openmp n=16777216 threads=32 time_ms=1277.6057
-fft_openmp n=16777216 threads=32 time_ms=1285.8214
-fft_openmp n=16777216 threads=32 time_ms=1280.1820
-fft_openmp n=16777216 threads=32 time_ms=1280.1381
-fir_openmp n=16777216 taps=101 threads=1 time_ms=1654.1236
-fir_openmp n=16777216 taps=101 threads=1 time_ms=1649.6990
-fir_openmp n=16777216 taps=101 threads=1 time_ms=1649.8775
-fir_openmp n=16777216 taps=101 threads=1 time_ms=1657.3851
-fir_openmp n=16777216 taps=101 threads=1 time_ms=1656.9308
-fir_openmp n=16777216 taps=101 threads=2 time_ms=844.2927
-fir_openmp n=16777216 taps=101 threads=2 time_ms=835.3561
-fir_openmp n=16777216 taps=101 threads=2 time_ms=846.0279
-fir_openmp n=16777216 taps=101 threads=2 time_ms=844.5404
-fir_openmp n=16777216 taps=101 threads=2 time_ms=841.4333
-fir_openmp n=16777216 taps=101 threads=4 time_ms=446.8816
-fir_openmp n=16777216 taps=101 threads=4 time_ms=450.3472
-fir_openmp n=16777216 taps=101 threads=4 time_ms=456.5292
-fir_openmp n=16777216 taps=101 threads=4 time_ms=458.1855
-fir_openmp n=16777216 taps=101 threads=4 time_ms=453.9424
-fir_openmp n=16777216 taps=101 threads=8 time_ms=237.7784
-fir_openmp n=16777216 taps=101 threads=8 time_ms=233.4910
-fir_openmp n=16777216 taps=101 threads=8 time_ms=229.8578
-fir_openmp n=16777216 taps=101 threads=8 time_ms=236.3159
-fir_openmp n=16777216 taps=101 threads=8 time_ms=234.1306
-fir_openmp n=16777216 taps=101 threads=16 time_ms=127.8482
-fir_openmp n=16777216 taps=101 threads=16 time_ms=127.6422
-fir_openmp n=16777216 taps=101 threads=16 time_ms=127.0715
-fir_openmp n=16777216 taps=101 threads=16 time_ms=128.0084
-fir_openmp n=16777216 taps=101 threads=16 time_ms=122.7924
-fir_openmp n=16777216 taps=101 threads=32 time_ms=101.6381
-fir_openmp n=16777216 taps=101 threads=32 time_ms=101.2406
-fir_openmp n=16777216 taps=101 threads=32 time_ms=97.0711
-fir_openmp n=16777216 taps=101 threads=32 time_ms=95.6720
-fir_openmp n=16777216 taps=101 threads=32 time_ms=96.1714
+--- dataset: data/input_20_downloaded.bin (n=1048576) ---
+fft_openmp n=1048576 threads=1 time_ms=100.1219
+fft_openmp n=1048576 threads=1 time_ms=98.9011
+fft_openmp n=1048576 threads=1 time_ms=101.4353
+fft_openmp n=1048576 threads=1 time_ms=100.5662
+fft_openmp n=1048576 threads=1 time_ms=100.5021
+fft_openmp n=1048576 threads=2 time_ms=85.2489
+fft_openmp n=1048576 threads=2 time_ms=86.0695
+fft_openmp n=1048576 threads=2 time_ms=85.6094
+fft_openmp n=1048576 threads=2 time_ms=85.9800
+fft_openmp n=1048576 threads=2 time_ms=85.9418
+fft_openmp n=1048576 threads=4 time_ms=79.4834
+fft_openmp n=1048576 threads=4 time_ms=77.5977
+fft_openmp n=1048576 threads=4 time_ms=77.4131
+fft_openmp n=1048576 threads=4 time_ms=77.7753
+fft_openmp n=1048576 threads=4 time_ms=78.6115
+fft_openmp n=1048576 threads=8 time_ms=74.8783
+fft_openmp n=1048576 threads=8 time_ms=76.9422
+fft_openmp n=1048576 threads=8 time_ms=75.1595
+fft_openmp n=1048576 threads=8 time_ms=78.1615
+fft_openmp n=1048576 threads=8 time_ms=73.4322
+fft_openmp n=1048576 threads=16 time_ms=74.2848
+fft_openmp n=1048576 threads=16 time_ms=72.8158
+fft_openmp n=1048576 threads=16 time_ms=71.9375
+fft_openmp n=1048576 threads=16 time_ms=75.2767
+fft_openmp n=1048576 threads=16 time_ms=72.6904
+fft_openmp n=1048576 threads=32 time_ms=73.0094
+fft_openmp n=1048576 threads=32 time_ms=87.1279
+fft_openmp n=1048576 threads=32 time_ms=74.4232
+fft_openmp n=1048576 threads=32 time_ms=75.4395
+fft_openmp n=1048576 threads=32 time_ms=75.7264
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.5347
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.9016
+fir_openmp n=1048576 taps=101 threads=1 time_ms=89.7310
+fir_openmp n=1048576 taps=101 threads=1 time_ms=90.2473
+fir_openmp n=1048576 taps=101 threads=1 time_ms=90.0679
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.7340
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.4836
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.7315
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.6695
+fir_openmp n=1048576 taps=101 threads=2 time_ms=45.2348
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.0605
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.1334
+fir_openmp n=1048576 taps=101 threads=4 time_ms=22.9447
+fir_openmp n=1048576 taps=101 threads=4 time_ms=22.8306
+fir_openmp n=1048576 taps=101 threads=4 time_ms=23.2002
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.8179
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.8134
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.6376
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.8860
+fir_openmp n=1048576 taps=101 threads=8 time_ms=11.9974
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.7909
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.4439
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.5231
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.6670
+fir_openmp n=1048576 taps=101 threads=16 time_ms=6.3340
+fir_openmp n=1048576 taps=101 threads=32 time_ms=4.2542
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.8686
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.8580
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.7374
+fir_openmp n=1048576 taps=101 threads=32 time_ms=3.9048
 
---- dataset: data/input_large.bin (n=67108864) ---
-fft_openmp n=67108864 threads=1 time_ms=8244.7072
-fft_openmp n=67108864 threads=1 time_ms=8290.9589
-fft_openmp n=67108864 threads=1 time_ms=8135.6411
-fft_openmp n=67108864 threads=1 time_ms=8181.2506
-fft_openmp n=67108864 threads=1 time_ms=8204.6640
-fft_openmp n=67108864 threads=2 time_ms=6699.3398
-fft_openmp n=67108864 threads=2 time_ms=6611.5893
-fft_openmp n=67108864 threads=2 time_ms=6672.1943
-fft_openmp n=67108864 threads=2 time_ms=6711.4949
-fft_openmp n=67108864 threads=2 time_ms=6527.9620
-fft_openmp n=67108864 threads=4 time_ms=5743.7761
-fft_openmp n=67108864 threads=4 time_ms=5945.7288
-fft_openmp n=67108864 threads=4 time_ms=5937.3353
-fft_openmp n=67108864 threads=4 time_ms=5948.0631
-fft_openmp n=67108864 threads=4 time_ms=5834.7162
-fft_openmp n=67108864 threads=8 time_ms=5491.6437
-fft_openmp n=67108864 threads=8 time_ms=5568.1608
-fft_openmp n=67108864 threads=8 time_ms=5724.9815
-fft_openmp n=67108864 threads=8 time_ms=5711.5222
-fft_openmp n=67108864 threads=8 time_ms=5714.6994
-fft_openmp n=67108864 threads=16 time_ms=5502.4635
-fft_openmp n=67108864 threads=16 time_ms=5594.1965
-fft_openmp n=67108864 threads=16 time_ms=5517.2395
-fft_openmp n=67108864 threads=16 time_ms=5669.7662
-fft_openmp n=67108864 threads=16 time_ms=5667.4708
-fft_openmp n=67108864 threads=32 time_ms=5627.6393
-fft_openmp n=67108864 threads=32 time_ms=5675.9778
-fft_openmp n=67108864 threads=32 time_ms=5678.7867
-fft_openmp n=67108864 threads=32 time_ms=5659.5061
-fft_openmp n=67108864 threads=32 time_ms=5718.0668
-fir_openmp n=67108864 taps=101 threads=1 time_ms=6638.9249
-fir_openmp n=67108864 taps=101 threads=1 time_ms=6615.9826
-fir_openmp n=67108864 taps=101 threads=1 time_ms=6609.2551
-fir_openmp n=67108864 taps=101 threads=1 time_ms=6631.1058
-fir_openmp n=67108864 taps=101 threads=1 time_ms=6623.3571
-fir_openmp n=67108864 taps=101 threads=2 time_ms=3365.9857
-fir_openmp n=67108864 taps=101 threads=2 time_ms=3364.5613
-fir_openmp n=67108864 taps=101 threads=2 time_ms=3366.1985
-fir_openmp n=67108864 taps=101 threads=2 time_ms=3352.4630
-fir_openmp n=67108864 taps=101 threads=2 time_ms=3358.1785
-fir_openmp n=67108864 taps=101 threads=4 time_ms=1763.4059
-fir_openmp n=67108864 taps=101 threads=4 time_ms=1766.4147
-fir_openmp n=67108864 taps=101 threads=4 time_ms=1760.4411
-fir_openmp n=67108864 taps=101 threads=4 time_ms=1765.0891
-fir_openmp n=67108864 taps=101 threads=4 time_ms=1759.4401
-fir_openmp n=67108864 taps=101 threads=8 time_ms=906.1990
-fir_openmp n=67108864 taps=101 threads=8 time_ms=900.4082
-fir_openmp n=67108864 taps=101 threads=8 time_ms=901.9423
-fir_openmp n=67108864 taps=101 threads=8 time_ms=904.0485
-fir_openmp n=67108864 taps=101 threads=8 time_ms=896.6658
-fir_openmp n=67108864 taps=101 threads=16 time_ms=482.2400
-fir_openmp n=67108864 taps=101 threads=16 time_ms=479.9131
-fir_openmp n=67108864 taps=101 threads=16 time_ms=479.9477
-fir_openmp n=67108864 taps=101 threads=16 time_ms=483.8816
-fir_openmp n=67108864 taps=101 threads=16 time_ms=486.2627
-fir_openmp n=67108864 taps=101 threads=32 time_ms=372.3752
-fir_openmp n=67108864 taps=101 threads=32 time_ms=370.3346
-fir_openmp n=67108864 taps=101 threads=32 time_ms=373.1317
-fir_openmp n=67108864 taps=101 threads=32 time_ms=373.6469
-fir_openmp n=67108864 taps=101 threads=32 time_ms=372.4159
+--- dataset: data/input_21_generated.bin (n=2097152) ---
+fft_openmp n=2097152 threads=1 time_ms=260.2063
+fft_openmp n=2097152 threads=1 time_ms=263.1765
+fft_openmp n=2097152 threads=1 time_ms=260.3429
+fft_openmp n=2097152 threads=1 time_ms=256.5595
+fft_openmp n=2097152 threads=1 time_ms=259.4725
+fft_openmp n=2097152 threads=2 time_ms=214.1734
+fft_openmp n=2097152 threads=2 time_ms=224.6176
+fft_openmp n=2097152 threads=2 time_ms=214.4334
+fft_openmp n=2097152 threads=2 time_ms=225.5482
+fft_openmp n=2097152 threads=2 time_ms=216.1820
+fft_openmp n=2097152 threads=4 time_ms=204.3863
+fft_openmp n=2097152 threads=4 time_ms=198.3531
+fft_openmp n=2097152 threads=4 time_ms=203.1744
+fft_openmp n=2097152 threads=4 time_ms=199.7727
+fft_openmp n=2097152 threads=4 time_ms=204.1060
+fft_openmp n=2097152 threads=8 time_ms=192.1602
+fft_openmp n=2097152 threads=8 time_ms=196.3840
+fft_openmp n=2097152 threads=8 time_ms=194.9691
+fft_openmp n=2097152 threads=8 time_ms=195.4526
+fft_openmp n=2097152 threads=8 time_ms=193.1127
+fft_openmp n=2097152 threads=16 time_ms=193.2812
+fft_openmp n=2097152 threads=16 time_ms=190.9396
+fft_openmp n=2097152 threads=16 time_ms=203.0830
+fft_openmp n=2097152 threads=16 time_ms=196.4535
+fft_openmp n=2097152 threads=16 time_ms=195.7833
+fft_openmp n=2097152 threads=32 time_ms=196.3536
+fft_openmp n=2097152 threads=32 time_ms=194.3076
+fft_openmp n=2097152 threads=32 time_ms=195.5859
+fft_openmp n=2097152 threads=32 time_ms=194.3502
+fft_openmp n=2097152 threads=32 time_ms=192.5975
+fir_openmp n=2097152 taps=101 threads=1 time_ms=178.7631
+fir_openmp n=2097152 taps=101 threads=1 time_ms=180.9770
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.5148
+fir_openmp n=2097152 taps=101 threads=1 time_ms=180.2457
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.2621
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.7741
+fir_openmp n=2097152 taps=101 threads=2 time_ms=89.7993
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.1972
+fir_openmp n=2097152 taps=101 threads=2 time_ms=89.9439
+fir_openmp n=2097152 taps=101 threads=2 time_ms=89.8362
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.7654
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.2586
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.4301
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.3412
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.5169
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.2912
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.1918
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.3233
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.1944
+fir_openmp n=2097152 taps=101 threads=8 time_ms=22.8783
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.1302
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.2030
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.1697
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.0080
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.0361
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.4818
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.1106
+fir_openmp n=2097152 taps=101 threads=32 time_ms=6.9783
+fir_openmp n=2097152 taps=101 threads=32 time_ms=6.8154
+fir_openmp n=2097152 taps=101 threads=32 time_ms=6.8847
 
+--- dataset: data/input_21_downloaded.bin (n=2097152) ---
+fft_openmp n=2097152 threads=1 time_ms=269.9549
+fft_openmp n=2097152 threads=1 time_ms=269.4713
+fft_openmp n=2097152 threads=1 time_ms=268.2895
+fft_openmp n=2097152 threads=1 time_ms=268.8558
+fft_openmp n=2097152 threads=1 time_ms=270.0279
+fft_openmp n=2097152 threads=2 time_ms=221.3404
+fft_openmp n=2097152 threads=2 time_ms=226.3217
+fft_openmp n=2097152 threads=2 time_ms=222.2475
+fft_openmp n=2097152 threads=2 time_ms=221.8538
+fft_openmp n=2097152 threads=2 time_ms=221.1870
+fft_openmp n=2097152 threads=4 time_ms=206.5123
+fft_openmp n=2097152 threads=4 time_ms=206.0532
+fft_openmp n=2097152 threads=4 time_ms=203.9576
+fft_openmp n=2097152 threads=4 time_ms=200.4031
+fft_openmp n=2097152 threads=4 time_ms=198.7778
+fft_openmp n=2097152 threads=8 time_ms=198.5524
+fft_openmp n=2097152 threads=8 time_ms=196.1036
+fft_openmp n=2097152 threads=8 time_ms=196.9379
+fft_openmp n=2097152 threads=8 time_ms=198.1556
+fft_openmp n=2097152 threads=8 time_ms=199.4919
+fft_openmp n=2097152 threads=16 time_ms=195.6296
+fft_openmp n=2097152 threads=16 time_ms=190.4163
+fft_openmp n=2097152 threads=16 time_ms=197.0319
+fft_openmp n=2097152 threads=16 time_ms=186.5975
+fft_openmp n=2097152 threads=16 time_ms=208.1297
+fft_openmp n=2097152 threads=32 time_ms=193.1130
+fft_openmp n=2097152 threads=32 time_ms=200.9793
+fft_openmp n=2097152 threads=32 time_ms=194.7042
+fft_openmp n=2097152 threads=32 time_ms=192.9797
+fft_openmp n=2097152 threads=32 time_ms=191.5815
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.9798
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.5510
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.3669
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.7973
+fir_openmp n=2097152 taps=101 threads=1 time_ms=179.5435
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.1930
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.1251
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.3092
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.2294
+fir_openmp n=2097152 taps=101 threads=2 time_ms=90.0985
+fir_openmp n=2097152 taps=101 threads=4 time_ms=46.0032
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.5474
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.8512
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.8205
+fir_openmp n=2097152 taps=101 threads=4 time_ms=45.6754
+fir_openmp n=2097152 taps=101 threads=8 time_ms=22.8399
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.2560
+fir_openmp n=2097152 taps=101 threads=8 time_ms=22.8303
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.2148
+fir_openmp n=2097152 taps=101 threads=8 time_ms=23.0345
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.1897
+fir_openmp n=2097152 taps=101 threads=16 time_ms=12.0038
+fir_openmp n=2097152 taps=101 threads=16 time_ms=11.9368
+fir_openmp n=2097152 taps=101 threads=16 time_ms=11.9989
+fir_openmp n=2097152 taps=101 threads=16 time_ms=11.8886
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.5980
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.0178
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.1249
+fir_openmp n=2097152 taps=101 threads=32 time_ms=7.0333
+fir_openmp n=2097152 taps=101 threads=32 time_ms=6.9316
+
+--- dataset: data/input_22_generated.bin (n=4194304) ---
+fft_openmp n=4194304 threads=1 time_ms=555.3554
+fft_openmp n=4194304 threads=1 time_ms=567.7530
+fft_openmp n=4194304 threads=1 time_ms=564.4406
+fft_openmp n=4194304 threads=1 time_ms=557.0368
+fft_openmp n=4194304 threads=1 time_ms=559.7569
+fft_openmp n=4194304 threads=2 time_ms=482.0305
+fft_openmp n=4194304 threads=2 time_ms=481.9435
+fft_openmp n=4194304 threads=2 time_ms=480.6697
+fft_openmp n=4194304 threads=2 time_ms=495.9115
+fft_openmp n=4194304 threads=2 time_ms=484.6083
+fft_openmp n=4194304 threads=4 time_ms=450.9776
+fft_openmp n=4194304 threads=4 time_ms=438.7912
+fft_openmp n=4194304 threads=4 time_ms=443.0275
+fft_openmp n=4194304 threads=4 time_ms=441.9957
+fft_openmp n=4194304 threads=4 time_ms=452.0740
+fft_openmp n=4194304 threads=8 time_ms=412.8732
+fft_openmp n=4194304 threads=8 time_ms=425.3482
+fft_openmp n=4194304 threads=8 time_ms=420.2643
+fft_openmp n=4194304 threads=8 time_ms=429.8762
+fft_openmp n=4194304 threads=8 time_ms=412.9869
+fft_openmp n=4194304 threads=16 time_ms=412.2878
+fft_openmp n=4194304 threads=16 time_ms=408.5237
+fft_openmp n=4194304 threads=16 time_ms=406.4068
+fft_openmp n=4194304 threads=16 time_ms=406.3466
+fft_openmp n=4194304 threads=16 time_ms=406.1924
+fft_openmp n=4194304 threads=32 time_ms=404.3821
+fft_openmp n=4194304 threads=32 time_ms=399.4431
+fft_openmp n=4194304 threads=32 time_ms=419.0185
+fft_openmp n=4194304 threads=32 time_ms=398.6024
+fft_openmp n=4194304 threads=32 time_ms=419.1213
+fir_openmp n=4194304 taps=101 threads=1 time_ms=358.3742
+fir_openmp n=4194304 taps=101 threads=1 time_ms=358.6744
+fir_openmp n=4194304 taps=101 threads=1 time_ms=359.0011
+fir_openmp n=4194304 taps=101 threads=1 time_ms=359.1564
+fir_openmp n=4194304 taps=101 threads=1 time_ms=360.4665
+fir_openmp n=4194304 taps=101 threads=2 time_ms=181.3113
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.5336
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.7986
+fir_openmp n=4194304 taps=101 threads=2 time_ms=180.2192
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.6258
+fir_openmp n=4194304 taps=101 threads=4 time_ms=91.0435
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.3046
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.2412
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.0235
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.2598
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.6015
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.4811
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.3871
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.5441
+fir_openmp n=4194304 taps=101 threads=8 time_ms=46.2723
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.6178
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.4345
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.6377
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.4391
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.0126
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.9455
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.4325
+fir_openmp n=4194304 taps=101 threads=32 time_ms=13.0184
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.6847
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.9966
+
+--- dataset: data/input_22_downloaded.bin (n=4194304) ---
+fft_openmp n=4194304 threads=1 time_ms=567.3406
+fft_openmp n=4194304 threads=1 time_ms=556.9738
+fft_openmp n=4194304 threads=1 time_ms=584.8161
+fft_openmp n=4194304 threads=1 time_ms=560.7101
+fft_openmp n=4194304 threads=1 time_ms=557.5981
+fft_openmp n=4194304 threads=2 time_ms=479.0555
+fft_openmp n=4194304 threads=2 time_ms=479.3396
+fft_openmp n=4194304 threads=2 time_ms=481.1605
+fft_openmp n=4194304 threads=2 time_ms=478.4222
+fft_openmp n=4194304 threads=2 time_ms=480.2463
+fft_openmp n=4194304 threads=4 time_ms=430.5608
+fft_openmp n=4194304 threads=4 time_ms=450.6494
+fft_openmp n=4194304 threads=4 time_ms=437.6397
+fft_openmp n=4194304 threads=4 time_ms=441.2011
+fft_openmp n=4194304 threads=4 time_ms=455.3955
+fft_openmp n=4194304 threads=8 time_ms=414.6688
+fft_openmp n=4194304 threads=8 time_ms=425.2455
+fft_openmp n=4194304 threads=8 time_ms=435.9032
+fft_openmp n=4194304 threads=8 time_ms=422.3003
+fft_openmp n=4194304 threads=8 time_ms=446.5877
+fft_openmp n=4194304 threads=16 time_ms=426.4088
+fft_openmp n=4194304 threads=16 time_ms=417.7872
+fft_openmp n=4194304 threads=16 time_ms=418.5130
+fft_openmp n=4194304 threads=16 time_ms=436.0233
+fft_openmp n=4194304 threads=16 time_ms=420.6172
+fft_openmp n=4194304 threads=32 time_ms=430.6689
+fft_openmp n=4194304 threads=32 time_ms=416.2651
+fft_openmp n=4194304 threads=32 time_ms=421.4254
+fft_openmp n=4194304 threads=32 time_ms=415.2613
+fft_openmp n=4194304 threads=32 time_ms=422.8851
+fir_openmp n=4194304 taps=101 threads=1 time_ms=359.8613
+fir_openmp n=4194304 taps=101 threads=1 time_ms=361.9534
+fir_openmp n=4194304 taps=101 threads=1 time_ms=362.1634
+fir_openmp n=4194304 taps=101 threads=1 time_ms=359.9403
+fir_openmp n=4194304 taps=101 threads=1 time_ms=359.0167
+fir_openmp n=4194304 taps=101 threads=2 time_ms=180.7687
+fir_openmp n=4194304 taps=101 threads=2 time_ms=181.2855
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.3039
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.7861
+fir_openmp n=4194304 taps=101 threads=2 time_ms=179.4333
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.6555
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.0429
+fir_openmp n=4194304 taps=101 threads=4 time_ms=90.0668
+fir_openmp n=4194304 taps=101 threads=4 time_ms=89.9765
+fir_openmp n=4194304 taps=101 threads=4 time_ms=89.7348
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.6119
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.5363
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.7230
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.5290
+fir_openmp n=4194304 taps=101 threads=8 time_ms=45.1304
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.3740
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.5371
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.4332
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.6176
+fir_openmp n=4194304 taps=101 threads=16 time_ms=23.8129
+fir_openmp n=4194304 taps=101 threads=32 time_ms=13.1669
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.7282
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.6201
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.9146
+fir_openmp n=4194304 taps=101 threads=32 time_ms=12.4840
+
+--- dataset: data/input_23_generated.bin (n=8388608) ---
+fft_openmp n=8388608 threads=1 time_ms=1155.7624
+fft_openmp n=8388608 threads=1 time_ms=1166.5254
+fft_openmp n=8388608 threads=1 time_ms=1146.5401
+fft_openmp n=8388608 threads=1 time_ms=1164.7552
+fft_openmp n=8388608 threads=1 time_ms=1152.0312
+fft_openmp n=8388608 threads=2 time_ms=996.9705
+fft_openmp n=8388608 threads=2 time_ms=984.5471
+fft_openmp n=8388608 threads=2 time_ms=993.5654
+fft_openmp n=8388608 threads=2 time_ms=987.9121
+fft_openmp n=8388608 threads=2 time_ms=992.8366
+fft_openmp n=8388608 threads=4 time_ms=924.1098
+fft_openmp n=8388608 threads=4 time_ms=911.4588
+fft_openmp n=8388608 threads=4 time_ms=904.0923
+fft_openmp n=8388608 threads=4 time_ms=914.2592
+fft_openmp n=8388608 threads=4 time_ms=908.4451
+fft_openmp n=8388608 threads=8 time_ms=860.5127
+fft_openmp n=8388608 threads=8 time_ms=860.7465
+fft_openmp n=8388608 threads=8 time_ms=867.2625
+fft_openmp n=8388608 threads=8 time_ms=864.1749
+fft_openmp n=8388608 threads=8 time_ms=868.9092
+fft_openmp n=8388608 threads=16 time_ms=864.4833
+fft_openmp n=8388608 threads=16 time_ms=849.8909
+fft_openmp n=8388608 threads=16 time_ms=853.4791
+fft_openmp n=8388608 threads=16 time_ms=876.7949
+fft_openmp n=8388608 threads=16 time_ms=857.0300
+fft_openmp n=8388608 threads=32 time_ms=845.7981
+fft_openmp n=8388608 threads=32 time_ms=860.0816
+fft_openmp n=8388608 threads=32 time_ms=833.6265
+fft_openmp n=8388608 threads=32 time_ms=846.4869
+fft_openmp n=8388608 threads=32 time_ms=836.8400
+fir_openmp n=8388608 taps=101 threads=1 time_ms=724.7174
+fir_openmp n=8388608 taps=101 threads=1 time_ms=725.3804
+fir_openmp n=8388608 taps=101 threads=1 time_ms=727.9515
+fir_openmp n=8388608 taps=101 threads=1 time_ms=720.4870
+fir_openmp n=8388608 taps=101 threads=1 time_ms=717.8153
+fir_openmp n=8388608 taps=101 threads=2 time_ms=358.3874
+fir_openmp n=8388608 taps=101 threads=2 time_ms=358.4644
+fir_openmp n=8388608 taps=101 threads=2 time_ms=359.7459
+fir_openmp n=8388608 taps=101 threads=2 time_ms=359.7457
+fir_openmp n=8388608 taps=101 threads=2 time_ms=360.4932
+fir_openmp n=8388608 taps=101 threads=4 time_ms=180.3208
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.6821
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.7763
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.9059
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.0806
+fir_openmp n=8388608 taps=101 threads=8 time_ms=91.4007
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.8917
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.8903
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.9131
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.8350
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.1968
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.5427
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.8742
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.6839
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.3217
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.7712
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.5728
+fir_openmp n=8388608 taps=101 threads=32 time_ms=23.9134
+fir_openmp n=8388608 taps=101 threads=32 time_ms=25.8578
+fir_openmp n=8388608 taps=101 threads=32 time_ms=26.1894
+
+--- dataset: data/input_23_downloaded.bin (n=8388608) ---
+fft_openmp n=8388608 threads=1 time_ms=1182.3967
+fft_openmp n=8388608 threads=1 time_ms=1161.0305
+fft_openmp n=8388608 threads=1 time_ms=1173.0783
+fft_openmp n=8388608 threads=1 time_ms=1160.5864
+fft_openmp n=8388608 threads=1 time_ms=1182.6315
+fft_openmp n=8388608 threads=2 time_ms=997.1531
+fft_openmp n=8388608 threads=2 time_ms=1014.5706
+fft_openmp n=8388608 threads=2 time_ms=1009.4346
+fft_openmp n=8388608 threads=2 time_ms=999.9723
+fft_openmp n=8388608 threads=2 time_ms=1005.4830
+fft_openmp n=8388608 threads=4 time_ms=939.4303
+fft_openmp n=8388608 threads=4 time_ms=936.9146
+fft_openmp n=8388608 threads=4 time_ms=923.3808
+fft_openmp n=8388608 threads=4 time_ms=944.6927
+fft_openmp n=8388608 threads=4 time_ms=937.9676
+fft_openmp n=8388608 threads=8 time_ms=884.9117
+fft_openmp n=8388608 threads=8 time_ms=884.0695
+fft_openmp n=8388608 threads=8 time_ms=893.0991
+fft_openmp n=8388608 threads=8 time_ms=887.2266
+fft_openmp n=8388608 threads=8 time_ms=889.3246
+fft_openmp n=8388608 threads=16 time_ms=863.3970
+fft_openmp n=8388608 threads=16 time_ms=885.9341
+fft_openmp n=8388608 threads=16 time_ms=871.9138
+fft_openmp n=8388608 threads=16 time_ms=886.8369
+fft_openmp n=8388608 threads=16 time_ms=866.2526
+fft_openmp n=8388608 threads=32 time_ms=867.5553
+fft_openmp n=8388608 threads=32 time_ms=862.3623
+fft_openmp n=8388608 threads=32 time_ms=854.5844
+fft_openmp n=8388608 threads=32 time_ms=861.6437
+fft_openmp n=8388608 threads=32 time_ms=856.0718
+fir_openmp n=8388608 taps=101 threads=1 time_ms=716.5066
+fir_openmp n=8388608 taps=101 threads=1 time_ms=717.9360
+fir_openmp n=8388608 taps=101 threads=1 time_ms=724.3329
+fir_openmp n=8388608 taps=101 threads=1 time_ms=717.6754
+fir_openmp n=8388608 taps=101 threads=1 time_ms=724.3773
+fir_openmp n=8388608 taps=101 threads=2 time_ms=358.3791
+fir_openmp n=8388608 taps=101 threads=2 time_ms=358.7487
+fir_openmp n=8388608 taps=101 threads=2 time_ms=356.7044
+fir_openmp n=8388608 taps=101 threads=2 time_ms=365.1422
+fir_openmp n=8388608 taps=101 threads=2 time_ms=357.4884
+fir_openmp n=8388608 taps=101 threads=4 time_ms=178.9400
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.1321
+fir_openmp n=8388608 taps=101 threads=4 time_ms=180.8411
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.0173
+fir_openmp n=8388608 taps=101 threads=4 time_ms=179.4590
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.8877
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.9787
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.8441
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.9842
+fir_openmp n=8388608 taps=101 threads=8 time_ms=90.6130
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.3720
+fir_openmp n=8388608 taps=101 threads=16 time_ms=46.7104
+fir_openmp n=8388608 taps=101 threads=16 time_ms=45.5028
+fir_openmp n=8388608 taps=101 threads=16 time_ms=45.6838
+fir_openmp n=8388608 taps=101 threads=16 time_ms=45.9430
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.3958
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.5277
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.0911
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.4041
+fir_openmp n=8388608 taps=101 threads=32 time_ms=24.1147
+
+--- dataset: data/input_24_generated.bin (n=16777216) ---
+fft_openmp n=16777216 threads=1 time_ms=2411.2596
+fft_openmp n=16777216 threads=1 time_ms=2416.6182
+fft_openmp n=16777216 threads=1 time_ms=2406.1105
+fft_openmp n=16777216 threads=1 time_ms=2363.5224
+fft_openmp n=16777216 threads=1 time_ms=2359.5255
+fft_openmp n=16777216 threads=2 time_ms=2005.2563
+fft_openmp n=16777216 threads=2 time_ms=2033.0693
+fft_openmp n=16777216 threads=2 time_ms=2025.9465
+fft_openmp n=16777216 threads=2 time_ms=2044.4468
+fft_openmp n=16777216 threads=2 time_ms=2025.0434
+fft_openmp n=16777216 threads=4 time_ms=1902.4682
+fft_openmp n=16777216 threads=4 time_ms=1860.4881
+fft_openmp n=16777216 threads=4 time_ms=1887.6795
+fft_openmp n=16777216 threads=4 time_ms=1851.9228
+fft_openmp n=16777216 threads=4 time_ms=1897.2963
+fft_openmp n=16777216 threads=8 time_ms=1797.7406
+fft_openmp n=16777216 threads=8 time_ms=1835.1091
+fft_openmp n=16777216 threads=8 time_ms=1793.4401
+fft_openmp n=16777216 threads=8 time_ms=1810.9461
+fft_openmp n=16777216 threads=8 time_ms=1809.3103
+fft_openmp n=16777216 threads=16 time_ms=1799.3869
+fft_openmp n=16777216 threads=16 time_ms=1756.0910
+fft_openmp n=16777216 threads=16 time_ms=1784.5061
+fft_openmp n=16777216 threads=16 time_ms=1751.3227
+fft_openmp n=16777216 threads=16 time_ms=1778.2497
+fft_openmp n=16777216 threads=32 time_ms=1765.6124
+fft_openmp n=16777216 threads=32 time_ms=1770.7892
+fft_openmp n=16777216 threads=32 time_ms=1777.3842
+fft_openmp n=16777216 threads=32 time_ms=1769.5285
+fft_openmp n=16777216 threads=32 time_ms=1766.3722
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1438.8424
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1423.1177
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1439.8373
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1429.5841
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1440.9310
+fir_openmp n=16777216 taps=101 threads=2 time_ms=717.2263
+fir_openmp n=16777216 taps=101 threads=2 time_ms=717.5819
+fir_openmp n=16777216 taps=101 threads=2 time_ms=722.9617
+fir_openmp n=16777216 taps=101 threads=2 time_ms=715.7684
+fir_openmp n=16777216 taps=101 threads=2 time_ms=725.0069
+fir_openmp n=16777216 taps=101 threads=4 time_ms=363.3534
+fir_openmp n=16777216 taps=101 threads=4 time_ms=360.6062
+fir_openmp n=16777216 taps=101 threads=4 time_ms=360.8275
+fir_openmp n=16777216 taps=101 threads=4 time_ms=363.1434
+fir_openmp n=16777216 taps=101 threads=4 time_ms=361.6078
+fir_openmp n=16777216 taps=101 threads=8 time_ms=180.6688
+fir_openmp n=16777216 taps=101 threads=8 time_ms=180.5948
+fir_openmp n=16777216 taps=101 threads=8 time_ms=181.1678
+fir_openmp n=16777216 taps=101 threads=8 time_ms=180.6740
+fir_openmp n=16777216 taps=101 threads=8 time_ms=182.4750
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.3852
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.4305
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.5269
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.6060
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.2461
+fir_openmp n=16777216 taps=101 threads=32 time_ms=46.9956
+fir_openmp n=16777216 taps=101 threads=32 time_ms=46.9164
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.4158
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.4062
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.8660
+
+--- dataset: data/input_24_downloaded.bin (n=16777216) ---
+fft_openmp n=16777216 threads=1 time_ms=2369.3817
+fft_openmp n=16777216 threads=1 time_ms=2369.9592
+fft_openmp n=16777216 threads=1 time_ms=2383.5903
+fft_openmp n=16777216 threads=1 time_ms=2365.0938
+fft_openmp n=16777216 threads=1 time_ms=2420.3576
+fft_openmp n=16777216 threads=2 time_ms=2096.2925
+fft_openmp n=16777216 threads=2 time_ms=2060.0254
+fft_openmp n=16777216 threads=2 time_ms=2007.0898
+fft_openmp n=16777216 threads=2 time_ms=2003.3269
+fft_openmp n=16777216 threads=2 time_ms=1992.8985
+fft_openmp n=16777216 threads=4 time_ms=1825.1399
+fft_openmp n=16777216 threads=4 time_ms=1845.8204
+fft_openmp n=16777216 threads=4 time_ms=1833.0357
+fft_openmp n=16777216 threads=4 time_ms=1849.3976
+fft_openmp n=16777216 threads=4 time_ms=1865.7685
+fft_openmp n=16777216 threads=8 time_ms=1808.7784
+fft_openmp n=16777216 threads=8 time_ms=1804.2382
+fft_openmp n=16777216 threads=8 time_ms=1820.1829
+fft_openmp n=16777216 threads=8 time_ms=1794.5189
+fft_openmp n=16777216 threads=8 time_ms=1776.8495
+fft_openmp n=16777216 threads=16 time_ms=1777.4973
+fft_openmp n=16777216 threads=16 time_ms=1767.2956
+fft_openmp n=16777216 threads=16 time_ms=1770.1850
+fft_openmp n=16777216 threads=16 time_ms=1773.0950
+fft_openmp n=16777216 threads=16 time_ms=1772.5740
+fft_openmp n=16777216 threads=32 time_ms=1781.7821
+fft_openmp n=16777216 threads=32 time_ms=1769.7303
+fft_openmp n=16777216 threads=32 time_ms=1778.7819
+fft_openmp n=16777216 threads=32 time_ms=1740.9428
+fft_openmp n=16777216 threads=32 time_ms=1814.1908
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1433.5842
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1432.8450
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1437.5424
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1440.9246
+fir_openmp n=16777216 taps=101 threads=1 time_ms=1431.5715
+fir_openmp n=16777216 taps=101 threads=2 time_ms=718.6489
+fir_openmp n=16777216 taps=101 threads=2 time_ms=717.8646
+fir_openmp n=16777216 taps=101 threads=2 time_ms=722.1496
+fir_openmp n=16777216 taps=101 threads=2 time_ms=719.2114
+fir_openmp n=16777216 taps=101 threads=2 time_ms=719.5190
+fir_openmp n=16777216 taps=101 threads=4 time_ms=363.6635
+fir_openmp n=16777216 taps=101 threads=4 time_ms=360.8775
+fir_openmp n=16777216 taps=101 threads=4 time_ms=359.5108
+fir_openmp n=16777216 taps=101 threads=4 time_ms=361.9758
+fir_openmp n=16777216 taps=101 threads=4 time_ms=359.5016
+fir_openmp n=16777216 taps=101 threads=8 time_ms=180.9863
+fir_openmp n=16777216 taps=101 threads=8 time_ms=181.0236
+fir_openmp n=16777216 taps=101 threads=8 time_ms=180.6511
+fir_openmp n=16777216 taps=101 threads=8 time_ms=181.3914
+fir_openmp n=16777216 taps=101 threads=8 time_ms=181.8653
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.7449
+fir_openmp n=16777216 taps=101 threads=16 time_ms=90.9545
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.4666
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.3277
+fir_openmp n=16777216 taps=101 threads=16 time_ms=91.3280
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.8219
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.2675
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.1799
+fir_openmp n=16777216 taps=101 threads=32 time_ms=46.6647
+fir_openmp n=16777216 taps=101 threads=32 time_ms=47.0340
+
+--- dataset: data/input_25_generated.bin (n=33554432) ---
+fft_openmp n=33554432 threads=1 time_ms=4862.9707
+fft_openmp n=33554432 threads=1 time_ms=4883.5672
+fft_openmp n=33554432 threads=1 time_ms=4903.4098
+fft_openmp n=33554432 threads=1 time_ms=4878.7168
+fft_openmp n=33554432 threads=1 time_ms=4883.9251
+fft_openmp n=33554432 threads=2 time_ms=4141.2346
+fft_openmp n=33554432 threads=2 time_ms=4168.1051
+fft_openmp n=33554432 threads=2 time_ms=4144.9601
+fft_openmp n=33554432 threads=2 time_ms=4166.7502
+fft_openmp n=33554432 threads=2 time_ms=4148.5010
+fft_openmp n=33554432 threads=4 time_ms=3833.9169
+fft_openmp n=33554432 threads=4 time_ms=3802.0397
+fft_openmp n=33554432 threads=4 time_ms=3857.9858
+fft_openmp n=33554432 threads=4 time_ms=3809.1207
+fft_openmp n=33554432 threads=4 time_ms=3821.2596
+fft_openmp n=33554432 threads=8 time_ms=3803.2205
+fft_openmp n=33554432 threads=8 time_ms=3867.5387
+fft_openmp n=33554432 threads=8 time_ms=3820.8526
+fft_openmp n=33554432 threads=8 time_ms=3688.4764
+fft_openmp n=33554432 threads=8 time_ms=3699.6579
+fft_openmp n=33554432 threads=16 time_ms=3668.6761
+fft_openmp n=33554432 threads=16 time_ms=3671.8114
+fft_openmp n=33554432 threads=16 time_ms=3667.4120
+fft_openmp n=33554432 threads=16 time_ms=3676.5089
+fft_openmp n=33554432 threads=16 time_ms=3644.9402
+fft_openmp n=33554432 threads=32 time_ms=3665.2179
+fft_openmp n=33554432 threads=32 time_ms=3689.0710
+fft_openmp n=33554432 threads=32 time_ms=3684.9466
+fft_openmp n=33554432 threads=32 time_ms=3635.3641
+fft_openmp n=33554432 threads=32 time_ms=3633.8744
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2893.5439
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2889.4513
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2882.9953
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2879.3803
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2888.6451
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1449.6754
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1449.0958
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1452.3155
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1448.5707
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1454.4622
+fir_openmp n=33554432 taps=101 threads=4 time_ms=728.9161
+fir_openmp n=33554432 taps=101 threads=4 time_ms=722.4872
+fir_openmp n=33554432 taps=101 threads=4 time_ms=727.6208
+fir_openmp n=33554432 taps=101 threads=4 time_ms=722.1406
+fir_openmp n=33554432 taps=101 threads=4 time_ms=730.3547
+fir_openmp n=33554432 taps=101 threads=8 time_ms=365.7603
+fir_openmp n=33554432 taps=101 threads=8 time_ms=362.5217
+fir_openmp n=33554432 taps=101 threads=8 time_ms=363.1000
+fir_openmp n=33554432 taps=101 threads=8 time_ms=362.6560
+fir_openmp n=33554432 taps=101 threads=8 time_ms=363.6864
+fir_openmp n=33554432 taps=101 threads=16 time_ms=182.2062
+fir_openmp n=33554432 taps=101 threads=16 time_ms=182.1459
+fir_openmp n=33554432 taps=101 threads=16 time_ms=182.3991
+fir_openmp n=33554432 taps=101 threads=16 time_ms=182.2448
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.5783
+fir_openmp n=33554432 taps=101 threads=32 time_ms=93.1445
+fir_openmp n=33554432 taps=101 threads=32 time_ms=93.3500
+fir_openmp n=33554432 taps=101 threads=32 time_ms=93.1570
+fir_openmp n=33554432 taps=101 threads=32 time_ms=93.0185
+fir_openmp n=33554432 taps=101 threads=32 time_ms=93.2951
+
+--- dataset: data/input_25_downloaded.bin (n=33554432) ---
+fft_openmp n=33554432 threads=1 time_ms=4918.5895
+fft_openmp n=33554432 threads=1 time_ms=4921.2810
+fft_openmp n=33554432 threads=1 time_ms=4904.2782
+fft_openmp n=33554432 threads=1 time_ms=5067.9343
+fft_openmp n=33554432 threads=1 time_ms=4938.5340
+fft_openmp n=33554432 threads=2 time_ms=4178.5877
+fft_openmp n=33554432 threads=2 time_ms=4154.2108
+fft_openmp n=33554432 threads=2 time_ms=4186.5211
+fft_openmp n=33554432 threads=2 time_ms=4166.8581
+fft_openmp n=33554432 threads=2 time_ms=4191.3458
+fft_openmp n=33554432 threads=4 time_ms=3768.5000
+fft_openmp n=33554432 threads=4 time_ms=3791.2780
+fft_openmp n=33554432 threads=4 time_ms=3808.6477
+fft_openmp n=33554432 threads=4 time_ms=3844.9694
+fft_openmp n=33554432 threads=4 time_ms=3792.5704
+fft_openmp n=33554432 threads=8 time_ms=3699.6377
+fft_openmp n=33554432 threads=8 time_ms=3634.3198
+fft_openmp n=33554432 threads=8 time_ms=3698.9859
+fft_openmp n=33554432 threads=8 time_ms=3632.5725
+fft_openmp n=33554432 threads=8 time_ms=3700.6845
+fft_openmp n=33554432 threads=16 time_ms=3619.9762
+fft_openmp n=33554432 threads=16 time_ms=3690.8992
+fft_openmp n=33554432 threads=16 time_ms=3635.9352
+fft_openmp n=33554432 threads=16 time_ms=3694.7948
+fft_openmp n=33554432 threads=16 time_ms=3632.4942
+fft_openmp n=33554432 threads=32 time_ms=3659.1074
+fft_openmp n=33554432 threads=32 time_ms=3621.2000
+fft_openmp n=33554432 threads=32 time_ms=3688.7022
+fft_openmp n=33554432 threads=32 time_ms=3605.3346
+fft_openmp n=33554432 threads=32 time_ms=3665.3142
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2892.1785
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2885.8649
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2878.2561
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2887.0593
+fir_openmp n=33554432 taps=101 threads=1 time_ms=2893.0615
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1446.3301
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1441.2415
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1448.5586
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1440.9783
+fir_openmp n=33554432 taps=101 threads=2 time_ms=1449.6147
+fir_openmp n=33554432 taps=101 threads=4 time_ms=721.4306
+fir_openmp n=33554432 taps=101 threads=4 time_ms=723.1013
+fir_openmp n=33554432 taps=101 threads=4 time_ms=725.2736
+fir_openmp n=33554432 taps=101 threads=4 time_ms=723.3558
+fir_openmp n=33554432 taps=101 threads=4 time_ms=723.6289
+fir_openmp n=33554432 taps=101 threads=8 time_ms=364.0320
+fir_openmp n=33554432 taps=101 threads=8 time_ms=361.6120
+fir_openmp n=33554432 taps=101 threads=8 time_ms=361.2060
+fir_openmp n=33554432 taps=101 threads=8 time_ms=361.6086
+fir_openmp n=33554432 taps=101 threads=8 time_ms=362.5969
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.8719
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.7527
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.8491
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.9311
+fir_openmp n=33554432 taps=101 threads=16 time_ms=181.9340
+fir_openmp n=33554432 taps=101 threads=32 time_ms=101.2870
+fir_openmp n=33554432 taps=101 threads=32 time_ms=99.5345
+fir_openmp n=33554432 taps=101 threads=32 time_ms=95.2548
+fir_openmp n=33554432 taps=101 threads=32 time_ms=94.4231
+fir_openmp n=33554432 taps=101 threads=32 time_ms=97.2119
+
+--- dataset: data/input_26_generated.bin (n=67108864) ---
+fft_openmp n=67108864 threads=1 time_ms=10211.7680
+fft_openmp n=67108864 threads=1 time_ms=10099.7842
+fft_openmp n=67108864 threads=1 time_ms=9711.5775
+fft_openmp n=67108864 threads=1 time_ms=9773.5850
+fft_openmp n=67108864 threads=1 time_ms=9764.7856
+fft_openmp n=67108864 threads=2 time_ms=8311.9962
+fft_openmp n=67108864 threads=2 time_ms=8306.8885
+fft_openmp n=67108864 threads=2 time_ms=8297.3892
+fft_openmp n=67108864 threads=2 time_ms=8452.1920
+fft_openmp n=67108864 threads=2 time_ms=8296.6908
+fft_openmp n=67108864 threads=4 time_ms=7687.9470
+fft_openmp n=67108864 threads=4 time_ms=7647.6315
+fft_openmp n=67108864 threads=4 time_ms=7675.3549
+fft_openmp n=67108864 threads=4 time_ms=7645.8449
+fft_openmp n=67108864 threads=4 time_ms=7676.0712
+fft_openmp n=67108864 threads=8 time_ms=7350.6476
+fft_openmp n=67108864 threads=8 time_ms=7381.3826
+fft_openmp n=67108864 threads=8 time_ms=7330.8104
+fft_openmp n=67108864 threads=8 time_ms=7462.3818
+fft_openmp n=67108864 threads=8 time_ms=7439.7491
+fft_openmp n=67108864 threads=16 time_ms=7450.7880
+fft_openmp n=67108864 threads=16 time_ms=7617.6256
+fft_openmp n=67108864 threads=16 time_ms=7601.8448
+fft_openmp n=67108864 threads=16 time_ms=7317.3912
+fft_openmp n=67108864 threads=16 time_ms=7309.3130
+fft_openmp n=67108864 threads=32 time_ms=7304.9425
+fft_openmp n=67108864 threads=32 time_ms=7303.7388
+fft_openmp n=67108864 threads=32 time_ms=7310.4465
+fft_openmp n=67108864 threads=32 time_ms=7304.5536
+fft_openmp n=67108864 threads=32 time_ms=7275.7643
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5721.8325
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5719.5476
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5728.2690
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5674.0862
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5712.0477
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2851.7013
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2854.8184
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2850.4077
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2852.0499
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2852.8489
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1426.7800
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1423.7636
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1430.8972
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1426.4850
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1426.5974
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.8099
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.4873
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.1361
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.5128
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.6387
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.4096
+fir_openmp n=67108864 taps=101 threads=16 time_ms=356.9842
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.1341
+fir_openmp n=67108864 taps=101 threads=16 time_ms=356.9247
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.4946
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.2566
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.4862
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.2033
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.3083
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.0494
+
+--- dataset: data/input_26_downloaded.bin (n=67108864) ---
+fft_openmp n=67108864 threads=1 time_ms=9741.6073
+fft_openmp n=67108864 threads=1 time_ms=9826.8581
+fft_openmp n=67108864 threads=1 time_ms=9752.3025
+fft_openmp n=67108864 threads=1 time_ms=9828.5368
+fft_openmp n=67108864 threads=1 time_ms=9749.0762
+fft_openmp n=67108864 threads=2 time_ms=8334.7061
+fft_openmp n=67108864 threads=2 time_ms=8282.1527
+fft_openmp n=67108864 threads=2 time_ms=8318.0703
+fft_openmp n=67108864 threads=2 time_ms=8285.5382
+fft_openmp n=67108864 threads=2 time_ms=8319.7637
+fft_openmp n=67108864 threads=4 time_ms=7555.9653
+fft_openmp n=67108864 threads=4 time_ms=7670.6428
+fft_openmp n=67108864 threads=4 time_ms=7587.2528
+fft_openmp n=67108864 threads=4 time_ms=7672.0394
+fft_openmp n=67108864 threads=4 time_ms=7639.5756
+fft_openmp n=67108864 threads=8 time_ms=7601.8161
+fft_openmp n=67108864 threads=8 time_ms=7482.8749
+fft_openmp n=67108864 threads=8 time_ms=7717.6732
+fft_openmp n=67108864 threads=8 time_ms=7753.8563
+fft_openmp n=67108864 threads=8 time_ms=7683.6872
+fft_openmp n=67108864 threads=16 time_ms=7282.5474
+fft_openmp n=67108864 threads=16 time_ms=7300.9000
+fft_openmp n=67108864 threads=16 time_ms=7285.0696
+fft_openmp n=67108864 threads=16 time_ms=7285.0364
+fft_openmp n=67108864 threads=16 time_ms=7227.6374
+fft_openmp n=67108864 threads=32 time_ms=7227.5296
+fft_openmp n=67108864 threads=32 time_ms=7222.2697
+fft_openmp n=67108864 threads=32 time_ms=7239.9393
+fft_openmp n=67108864 threads=32 time_ms=7261.2476
+fft_openmp n=67108864 threads=32 time_ms=7285.3261
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5723.6019
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5701.7550
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5697.9730
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5697.3840
+fir_openmp n=67108864 taps=101 threads=1 time_ms=5703.4473
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2852.8421
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2855.5457
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2851.9041
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2857.0103
+fir_openmp n=67108864 taps=101 threads=2 time_ms=2856.7240
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1428.5228
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1427.0635
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1425.9268
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1421.3380
+fir_openmp n=67108864 taps=101 threads=4 time_ms=1421.9294
+fir_openmp n=67108864 taps=101 threads=8 time_ms=714.1630
+fir_openmp n=67108864 taps=101 threads=8 time_ms=713.0544
+fir_openmp n=67108864 taps=101 threads=8 time_ms=713.6277
+fir_openmp n=67108864 taps=101 threads=8 time_ms=713.2283
+fir_openmp n=67108864 taps=101 threads=8 time_ms=713.5205
+fir_openmp n=67108864 taps=101 threads=16 time_ms=356.9877
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.3457
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.1391
+fir_openmp n=67108864 taps=101 threads=16 time_ms=357.0732
+fir_openmp n=67108864 taps=101 threads=16 time_ms=356.9696
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.6809
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.2658
+fir_openmp n=67108864 taps=101 threads=32 time_ms=180.8209
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.4193
+fir_openmp n=67108864 taps=101 threads=32 time_ms=181.1397
+
+--- dataset: data/input_27_generated.bin (n=134217728) ---
+fft_openmp n=134217728 threads=1 time_ms=19855.4269
+fft_openmp n=134217728 threads=1 time_ms=19833.2864
+fft_openmp n=134217728 threads=1 time_ms=19848.2929
+fft_openmp n=134217728 threads=1 time_ms=19821.0799
+fft_openmp n=134217728 threads=1 time_ms=19863.8077
+fft_openmp n=134217728 threads=2 time_ms=16788.3897
+fft_openmp n=134217728 threads=2 time_ms=16779.5180
+fft_openmp n=134217728 threads=2 time_ms=17014.6319
+fft_openmp n=134217728 threads=2 time_ms=17041.5078
+fft_openmp n=134217728 threads=2 time_ms=17474.6238
+fft_openmp n=134217728 threads=4 time_ms=16210.9313
+fft_openmp n=134217728 threads=4 time_ms=15264.3362
+fft_openmp n=134217728 threads=4 time_ms=15187.2157
+fft_openmp n=134217728 threads=4 time_ms=15273.0689
+fft_openmp n=134217728 threads=4 time_ms=15185.6026
+fft_openmp n=134217728 threads=8 time_ms=14702.2751
+fft_openmp n=134217728 threads=8 time_ms=14639.1936
+fft_openmp n=134217728 threads=8 time_ms=14790.8001
+fft_openmp n=134217728 threads=8 time_ms=14943.4274
+fft_openmp n=134217728 threads=8 time_ms=14704.2244
+fft_openmp n=134217728 threads=16 time_ms=14593.0585
+fft_openmp n=134217728 threads=16 time_ms=14641.6202
+fft_openmp n=134217728 threads=16 time_ms=14589.8015
+fft_openmp n=134217728 threads=16 time_ms=14602.7254
+fft_openmp n=134217728 threads=16 time_ms=14608.2863
+fft_openmp n=134217728 threads=32 time_ms=14614.6526
+fft_openmp n=134217728 threads=32 time_ms=14488.7688
+fft_openmp n=134217728 threads=32 time_ms=14601.2845
+fft_openmp n=134217728 threads=32 time_ms=14591.3148
+fft_openmp n=134217728 threads=32 time_ms=14505.9504
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11387.0788
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11399.7452
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11408.2625
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11384.9780
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11415.2845
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5699.6546
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5697.8137
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5713.7477
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5697.1876
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5700.1876
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2841.0478
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2846.7472
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2843.5401
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2840.6370
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2839.7047
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1427.9653
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1426.9125
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1429.6437
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1426.6592
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1426.6050
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.9806
+fir_openmp n=134217728 taps=101 threads=16 time_ms=713.0292
+fir_openmp n=134217728 taps=101 threads=16 time_ms=713.3074
+fir_openmp n=134217728 taps=101 threads=16 time_ms=714.1582
+fir_openmp n=134217728 taps=101 threads=16 time_ms=713.1274
+fir_openmp n=134217728 taps=101 threads=32 time_ms=360.8554
+fir_openmp n=134217728 taps=101 threads=32 time_ms=359.2118
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.4625
+fir_openmp n=134217728 taps=101 threads=32 time_ms=360.5305
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.1392
+
+--- dataset: data/input_27_downloaded.bin (n=134217728) ---
+fft_openmp n=134217728 threads=1 time_ms=19876.2574
+fft_openmp n=134217728 threads=1 time_ms=20231.5228
+fft_openmp n=134217728 threads=1 time_ms=20166.6923
+fft_openmp n=134217728 threads=1 time_ms=20457.9289
+fft_openmp n=134217728 threads=1 time_ms=20404.4009
+fft_openmp n=134217728 threads=2 time_ms=17910.7789
+fft_openmp n=134217728 threads=2 time_ms=18265.2177
+fft_openmp n=134217728 threads=2 time_ms=17077.0412
+fft_openmp n=134217728 threads=2 time_ms=16796.0294
+fft_openmp n=134217728 threads=2 time_ms=16718.6934
+fft_openmp n=134217728 threads=4 time_ms=15327.0445
+fft_openmp n=134217728 threads=4 time_ms=15323.0905
+fft_openmp n=134217728 threads=4 time_ms=15207.2139
+fft_openmp n=134217728 threads=4 time_ms=15314.5181
+fft_openmp n=134217728 threads=4 time_ms=15304.8149
+fft_openmp n=134217728 threads=8 time_ms=14755.8409
+fft_openmp n=134217728 threads=8 time_ms=14747.1689
+fft_openmp n=134217728 threads=8 time_ms=14667.8350
+fft_openmp n=134217728 threads=8 time_ms=14693.3475
+fft_openmp n=134217728 threads=8 time_ms=14690.4228
+fft_openmp n=134217728 threads=16 time_ms=14895.3758
+fft_openmp n=134217728 threads=16 time_ms=14839.0211
+fft_openmp n=134217728 threads=16 time_ms=14646.1522
+fft_openmp n=134217728 threads=16 time_ms=14568.6424
+fft_openmp n=134217728 threads=16 time_ms=14557.6353
+fft_openmp n=134217728 threads=32 time_ms=14520.6991
+fft_openmp n=134217728 threads=32 time_ms=14451.8467
+fft_openmp n=134217728 threads=32 time_ms=14461.7756
+fft_openmp n=134217728 threads=32 time_ms=14469.1490
+fft_openmp n=134217728 threads=32 time_ms=14518.0238
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11367.6555
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11385.0011
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11388.4934
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11390.2301
+fir_openmp n=134217728 taps=101 threads=1 time_ms=11396.4063
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5705.3620
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5694.9220
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5702.4403
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5694.8368
+fir_openmp n=134217728 taps=101 threads=2 time_ms=5716.0655
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2841.1893
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2842.7669
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2840.6279
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2843.9084
+fir_openmp n=134217728 taps=101 threads=4 time_ms=2840.7616
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1428.5322
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1431.2809
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1427.0869
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1427.6517
+fir_openmp n=134217728 taps=101 threads=8 time_ms=1427.8937
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.5430
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.7124
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.2299
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.3108
+fir_openmp n=134217728 taps=101 threads=16 time_ms=712.1260
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.3786
+fir_openmp n=134217728 taps=101 threads=32 time_ms=360.4007
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.5114
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.0534
+fir_openmp n=134217728 taps=101 threads=32 time_ms=361.1841
+
+--- dataset: data/input_28_generated.bin (n=268435456) ---
+fft_openmp n=268435456 threads=1 time_ms=40384.6522
+fft_openmp n=268435456 threads=1 time_ms=40506.9136
+fft_openmp n=268435456 threads=1 time_ms=41150.1899
+fft_openmp n=268435456 threads=1 time_ms=41953.8260
+fft_openmp n=268435456 threads=1 time_ms=42511.5002
+fft_openmp n=268435456 threads=2 time_ms=34074.2726
+fft_openmp n=268435456 threads=2 time_ms=34139.5583
+fft_openmp n=268435456 threads=2 time_ms=34118.8508
+fft_openmp n=268435456 threads=2 time_ms=34121.8440
+fft_openmp n=268435456 threads=2 time_ms=34128.3148
+fft_openmp n=268435456 threads=4 time_ms=31304.7705
+fft_openmp n=268435456 threads=4 time_ms=31364.8660
+fft_openmp n=268435456 threads=4 time_ms=31091.5881
+fft_openmp n=268435456 threads=4 time_ms=31042.7689
+fft_openmp n=268435456 threads=4 time_ms=31052.1688
+fft_openmp n=268435456 threads=8 time_ms=29593.1661
+fft_openmp n=268435456 threads=8 time_ms=29600.4692
+fft_openmp n=268435456 threads=8 time_ms=29807.4067
+fft_openmp n=268435456 threads=8 time_ms=29590.9856
+fft_openmp n=268435456 threads=8 time_ms=29742.9084
+fft_openmp n=268435456 threads=16 time_ms=29639.0102
+fft_openmp n=268435456 threads=16 time_ms=29579.7805
+fft_openmp n=268435456 threads=16 time_ms=29652.5637
+fft_openmp n=268435456 threads=16 time_ms=29636.9087
+fft_openmp n=268435456 threads=16 time_ms=29631.6585
+fft_openmp n=268435456 threads=32 time_ms=29547.7760
+fft_openmp n=268435456 threads=32 time_ms=29599.1975
+fft_openmp n=268435456 threads=32 time_ms=29550.9884
+fft_openmp n=268435456 threads=32 time_ms=29552.6154
+fft_openmp n=268435456 threads=32 time_ms=29548.9005
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22820.3634
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22748.4699
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22765.9476
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22757.2265
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22754.4285
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11384.6732
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11355.2383
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11391.7623
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11352.9387
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11401.3059
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5732.0335
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5701.8275
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5730.8165
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5695.5465
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5724.9040
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2849.4900
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.2324
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.0304
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2855.5415
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2851.3764
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1424.1227
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1423.4243
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1423.8559
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1425.0036
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1426.0428
+fir_openmp n=268435456 taps=101 threads=32 time_ms=762.0331
+fir_openmp n=268435456 taps=101 threads=32 time_ms=757.1653
+fir_openmp n=268435456 taps=101 threads=32 time_ms=740.1480
+fir_openmp n=268435456 taps=101 threads=32 time_ms=768.0286
+fir_openmp n=268435456 taps=101 threads=32 time_ms=736.2526
+
+--- dataset: data/input_28_downloaded.bin (n=268435456) ---
+fft_openmp n=268435456 threads=1 time_ms=42434.0378
+fft_openmp n=268435456 threads=1 time_ms=42364.0645
+fft_openmp n=268435456 threads=1 time_ms=41174.2476
+fft_openmp n=268435456 threads=1 time_ms=40423.1876
+fft_openmp n=268435456 threads=1 time_ms=40485.1823
+fft_openmp n=268435456 threads=2 time_ms=33993.0787
+fft_openmp n=268435456 threads=2 time_ms=34072.8145
+fft_openmp n=268435456 threads=2 time_ms=33808.6174
+fft_openmp n=268435456 threads=2 time_ms=34091.5315
+fft_openmp n=268435456 threads=2 time_ms=33830.5443
+fft_openmp n=268435456 threads=4 time_ms=31060.0358
+fft_openmp n=268435456 threads=4 time_ms=31063.8299
+fft_openmp n=268435456 threads=4 time_ms=31113.4390
+fft_openmp n=268435456 threads=4 time_ms=31171.7988
+fft_openmp n=268435456 threads=4 time_ms=31293.2683
+fft_openmp n=268435456 threads=8 time_ms=30038.8542
+fft_openmp n=268435456 threads=8 time_ms=29553.0426
+fft_openmp n=268435456 threads=8 time_ms=29776.6762
+fft_openmp n=268435456 threads=8 time_ms=29559.3044
+fft_openmp n=268435456 threads=8 time_ms=29809.5739
+fft_openmp n=268435456 threads=16 time_ms=29599.7241
+fft_openmp n=268435456 threads=16 time_ms=29465.4646
+fft_openmp n=268435456 threads=16 time_ms=29579.8466
+fft_openmp n=268435456 threads=16 time_ms=29664.5553
+fft_openmp n=268435456 threads=16 time_ms=29577.8376
+fft_openmp n=268435456 threads=32 time_ms=29625.2198
+fft_openmp n=268435456 threads=32 time_ms=29530.7024
+fft_openmp n=268435456 threads=32 time_ms=29457.0620
+fft_openmp n=268435456 threads=32 time_ms=29344.8546
+fft_openmp n=268435456 threads=32 time_ms=29437.0410
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22757.1049
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22751.7024
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22807.1411
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22752.7518
+fir_openmp n=268435456 taps=101 threads=1 time_ms=22828.3253
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11386.6154
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11398.3527
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11390.1063
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11386.5007
+fir_openmp n=268435456 taps=101 threads=2 time_ms=11389.6913
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5704.0084
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5686.2291
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5680.8285
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5685.5112
+fir_openmp n=268435456 taps=101 threads=4 time_ms=5703.5288
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.8805
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.6199
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.3160
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2842.6024
+fir_openmp n=268435456 taps=101 threads=8 time_ms=2843.8952
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1423.4284
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1425.9354
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1434.5725
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1425.7299
+fir_openmp n=268435456 taps=101 threads=16 time_ms=1423.4371
+fir_openmp n=268435456 taps=101 threads=32 time_ms=715.5168
+fir_openmp n=268435456 taps=101 threads=32 time_ms=716.0030
+fir_openmp n=268435456 taps=101 threads=32 time_ms=720.2794
+fir_openmp n=268435456 taps=101 threads=32 time_ms=720.7181
+fir_openmp n=268435456 taps=101 threads=32 time_ms=718.8101
+
+--- dataset: data/input_29_generated.bin (n=536870912) ---
+fft_openmp n=536870912 threads=1 time_ms=110040.5013
+fft_openmp n=536870912 threads=1 time_ms=117785.7006
+fft_openmp n=536870912 threads=1 time_ms=86610.3468
+fft_openmp n=536870912 threads=1 time_ms=83571.2808
+fft_openmp n=536870912 threads=1 time_ms=83909.9776
+fft_openmp n=536870912 threads=2 time_ms=70810.7187
+fft_openmp n=536870912 threads=2 time_ms=70858.6033
+fft_openmp n=536870912 threads=2 time_ms=71658.5836
+fft_openmp n=536870912 threads=2 time_ms=83190.9186
+fft_openmp n=536870912 threads=2 time_ms=70799.5741
+fft_openmp n=536870912 threads=4 time_ms=64310.2261
+fft_openmp n=536870912 threads=4 time_ms=64256.2019
+fft_openmp n=536870912 threads=4 time_ms=64289.0238
+fft_openmp n=536870912 threads=4 time_ms=64361.0522
+fft_openmp n=536870912 threads=4 time_ms=64234.1965
+fft_openmp n=536870912 threads=8 time_ms=61771.8594
+fft_openmp n=536870912 threads=8 time_ms=61753.5985
+fft_openmp n=536870912 threads=8 time_ms=61765.9474
+fft_openmp n=536870912 threads=8 time_ms=61718.6488
+fft_openmp n=536870912 threads=8 time_ms=61772.7726
+fft_openmp n=536870912 threads=16 time_ms=61364.5787
+fft_openmp n=536870912 threads=16 time_ms=61424.9846
+fft_openmp n=536870912 threads=16 time_ms=61359.5058
+fft_openmp n=536870912 threads=16 time_ms=61422.4460
+fft_openmp n=536870912 threads=16 time_ms=61387.8633
+fft_openmp n=536870912 threads=32 time_ms=60973.0606
+fft_openmp n=536870912 threads=32 time_ms=61264.9164
+fft_openmp n=536870912 threads=32 time_ms=61410.6311
+fft_openmp n=536870912 threads=32 time_ms=61050.3639
+fft_openmp n=536870912 threads=32 time_ms=61284.7138
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45603.4506
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45406.0447
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45522.7399
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45390.7128
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45528.2330
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22764.4976
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22781.1134
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22754.6727
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22776.8572
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22754.9455
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11396.0741
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11401.4842
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11398.4349
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11390.3799
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11401.8396
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5704.3333
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5701.0103
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5703.6986
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5700.4050
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5704.9433
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2844.6912
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2843.4023
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2843.8079
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2847.3637
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2843.0432
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1427.4829
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1427.9264
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1428.1585
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1428.2282
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1427.9854
+
+--- dataset: data/input_29_downloaded.bin (n=536870912) ---
+fft_openmp n=536870912 threads=1 time_ms=83649.1909
+fft_openmp n=536870912 threads=1 time_ms=83542.6790
+fft_openmp n=536870912 threads=1 time_ms=83521.8763
+fft_openmp n=536870912 threads=1 time_ms=83492.5149
+fft_openmp n=536870912 threads=1 time_ms=83870.2716
+fft_openmp n=536870912 threads=2 time_ms=70861.6584
+fft_openmp n=536870912 threads=2 time_ms=70632.6218
+fft_openmp n=536870912 threads=2 time_ms=70680.4080
+fft_openmp n=536870912 threads=2 time_ms=70750.9356
+fft_openmp n=536870912 threads=2 time_ms=70686.0925
+fft_openmp n=536870912 threads=4 time_ms=64349.3412
+fft_openmp n=536870912 threads=4 time_ms=64279.6785
+fft_openmp n=536870912 threads=4 time_ms=64331.0331
+fft_openmp n=536870912 threads=4 time_ms=64396.0464
+fft_openmp n=536870912 threads=4 time_ms=64348.8140
+fft_openmp n=536870912 threads=8 time_ms=61771.0920
+fft_openmp n=536870912 threads=8 time_ms=61864.6740
+fft_openmp n=536870912 threads=8 time_ms=61439.3329
+fft_openmp n=536870912 threads=8 time_ms=61861.2716
+fft_openmp n=536870912 threads=8 time_ms=61843.5021
+fft_openmp n=536870912 threads=16 time_ms=60934.8846
+fft_openmp n=536870912 threads=16 time_ms=60760.9973
+fft_openmp n=536870912 threads=16 time_ms=60719.6565
+fft_openmp n=536870912 threads=16 time_ms=60739.2250
+fft_openmp n=536870912 threads=16 time_ms=60839.3705
+fft_openmp n=536870912 threads=32 time_ms=60681.9709
+fft_openmp n=536870912 threads=32 time_ms=60336.9475
+fft_openmp n=536870912 threads=32 time_ms=60731.0888
+fft_openmp n=536870912 threads=32 time_ms=60496.1968
+fft_openmp n=536870912 threads=32 time_ms=60311.5743
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45611.5481
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45482.3536
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45399.1818
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45471.6956
+fir_openmp n=536870912 taps=101 threads=1 time_ms=45429.3290
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22782.2625
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22778.4764
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22768.7785
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22770.9987
+fir_openmp n=536870912 taps=101 threads=2 time_ms=22770.2520
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11395.6472
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11398.1346
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11355.3397
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11396.0118
+fir_openmp n=536870912 taps=101 threads=4 time_ms=11354.5780
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5698.7353
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5702.2217
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5699.8497
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5704.2144
+fir_openmp n=536870912 taps=101 threads=8 time_ms=5700.1288
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2844.8598
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2844.4670
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2844.0110
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2843.1446
+fir_openmp n=536870912 taps=101 threads=16 time_ms=2842.9948
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1428.8639
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1428.3489
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1427.3840
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1425.4530
+fir_openmp n=536870912 taps=101 threads=32 time_ms=1428.5215
+
+--- dataset: data/input_30_generated.bin (n=1073741824) ---
+fir_openmp n=1073741824 taps=101 threads=1 time_ms=91184.3892
+fir_openmp n=1073741824 taps=101 threads=1 time_ms=90782.2922
+fir_openmp n=1073741824 taps=101 threads=1 time_ms=91289.6830
+fir_openmp n=1073741824 taps=101 threads=1 time_ms=91312.8098
+fir_openmp n=1073741824 taps=101 threads=1 time_ms=90755.2316
+fir_openmp n=1073741824 taps=101 threads=2 time_ms=45397.9559
+fir_openmp n=1073741824 taps=101 threads=2 time_ms=45496.1189
+fir_openmp n=1073741824 taps=101 threads=2 time_ms=45417.7017
+fir_openmp n=1073741824 taps=101 threads=2 time_ms=45546.1915
+fir_openmp n=1073741824 taps=101 threads=2 time_ms=45398.4964
+fir_openmp n=1073741824 taps=101 threads=4 time_ms=22794.7521
+fir_openmp n=1073741824 taps=101 threads=4 time_ms=22811.3213
+fir_openmp n=1073741824 taps=101 threads=4 time_ms=22818.2141
+fir_openmp n=1073741824 taps=101 threads=4 time_ms=22786.8508
+fir_openmp n=1073741824 taps=101 threads=4 time_ms=22784.4775
+fir_openmp n=1073741824 taps=101 threads=8 time_ms=11402.3917
+fir_openmp n=1073741824 taps=101 threads=8 time_ms=11397.6515
+fir_openmp n=1073741824 taps=101 threads=8 time_ms=11397.9095
+fir_openmp n=1073741824 taps=101 threads=8 time_ms=11401.4603
+fir_openmp n=1073741824 taps=101 threads=8 time_ms=11399.6313
+fir_openmp n=1073741824 taps=101 threads=16 time_ms=5682.8555
+fir_openmp n=1073741824 taps=101 threads=16 time_ms=5683.6531
+fir_openmp n=1073741824 taps=101 threads=16 time_ms=5685.6370
+fir_openmp n=1073741824 taps=101 threads=16 time_ms=5685.1343
+fir_openmp n=1073741824 taps=101 threads=16 time_ms=5684.0091
+fir_openmp n=1073741824 taps=101 threads=32 time_ms=2848.3405
+fir_openmp n=1073741824 taps=101 threads=32 time_ms=2847.9053
+fir_openmp n=1073741824 taps=101 threads=32 time_ms=2848.8584
+fir_openmp n=1073741824 taps=101 threads=32 time_ms=2848.8970
+fir_openmp n=1073741824 taps=101 threads=32 time_ms=2850.4882

@@ -94,7 +94,7 @@ cd eece5640-finalproject
 python3 -m venv .venv
 source .venv/bin/activate
 
-# install python dependencies
+# install python dependencies (numpy, matplotlib, soundfile)
 pip install -r requirements.txt
 ```
 
@@ -217,7 +217,30 @@ squeue -u $USER
 cat results/<middleware>_<jobid>.out
 ```
 
-## Measurements
+## Analysis
+
+Once all benchmark jobs have completed, run the analysis script to compute statistics and generate plots:
+
+```bash
+python3 scripts/analyze_results.py \
+    --baseline  results/baseline_results.txt \
+    --pthreads  results/pthreads_results.txt \
+    --openmp    results/openmp_results.txt \
+    --mpi       results/mpi_results.txt \
+    --outdir    results/analysis
+```
+
+**Outputs** written to `results/analysis/`:
+
+- `results.csv` — all configurations with mean ± std dev, speedup, and parallel efficiency
+- `speedup_{fft|fir}_{generated|downloaded}.png` — speedup vs thread/process count at representative sizes
+- `efficiency_{fft|fir}_{generated|downloaded}.png` — parallel efficiency vs thread/process count
+- `scaling_{fft|fir}_{generated|downloaded}.png` — execution time vs n at p=32 across all middlewares
+- `genvsdown_{fft|fir}_{middleware}.png` — generated vs downloaded input comparison
+
+Requires `numpy` and `matplotlib` (`pip install -r requirements.txt`).
+
+
 
 For each configuration we collect:
 - Wall-clock execution time (5 runs, report mean ± std dev)

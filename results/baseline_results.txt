@@ -1,40 +1,243 @@
 === baseline ===
-date: Tue Mar 24 04:27:06 PM EDT 2026
-host: c0584
+date: Fri Apr 10 10:25:56 AM EDT 2026
+host: d0144
 
---- dataset: data/input_small.bin (n=1048576) ---
-fft_baseline n=1048576 time_ms=127.5754
-fft_baseline n=1048576 time_ms=127.5067
-fft_baseline n=1048576 time_ms=123.3422
-fft_baseline n=1048576 time_ms=126.6862
-fft_baseline n=1048576 time_ms=127.4585
-fir_baseline n=1048576 taps=101 time_ms=120.5594
-fir_baseline n=1048576 taps=101 time_ms=120.3096
-fir_baseline n=1048576 taps=101 time_ms=120.6017
-fir_baseline n=1048576 taps=101 time_ms=120.6362
-fir_baseline n=1048576 taps=101 time_ms=120.3928
+--- dataset: data/input_20_generated.bin (n=1048576) ---
+fft_baseline n=1048576 time_ms=110.0531
+fft_baseline n=1048576 time_ms=111.2414
+fft_baseline n=1048576 time_ms=109.7310
+fft_baseline n=1048576 time_ms=108.6238
+fft_baseline n=1048576 time_ms=109.2559
+fir_baseline n=1048576 taps=101 time_ms=97.4488
+fir_baseline n=1048576 taps=101 time_ms=98.3104
+fir_baseline n=1048576 taps=101 time_ms=97.5705
+fir_baseline n=1048576 taps=101 time_ms=98.5614
+fir_baseline n=1048576 taps=101 time_ms=97.9138
 
---- dataset: data/input_medium.bin (n=16777216) ---
-fft_baseline n=16777216 time_ms=2627.2456
-fft_baseline n=16777216 time_ms=2638.5818
-fft_baseline n=16777216 time_ms=2642.7741
-fft_baseline n=16777216 time_ms=2635.9927
-fft_baseline n=16777216 time_ms=2617.2769
-fir_baseline n=16777216 taps=101 time_ms=1917.8753
-fir_baseline n=16777216 taps=101 time_ms=1917.6405
-fir_baseline n=16777216 taps=101 time_ms=1917.8537
-fir_baseline n=16777216 taps=101 time_ms=1917.6084
-fir_baseline n=16777216 taps=101 time_ms=1917.3027
+--- dataset: data/input_20_downloaded.bin (n=1048576) ---
+fft_baseline n=1048576 time_ms=110.2706
+fft_baseline n=1048576 time_ms=110.8226
+fft_baseline n=1048576 time_ms=109.6552
+fft_baseline n=1048576 time_ms=110.8937
+fft_baseline n=1048576 time_ms=109.2617
+fir_baseline n=1048576 taps=101 time_ms=98.2797
+fir_baseline n=1048576 taps=101 time_ms=98.4739
+fir_baseline n=1048576 taps=101 time_ms=97.1675
+fir_baseline n=1048576 taps=101 time_ms=97.7518
+fir_baseline n=1048576 taps=101 time_ms=97.6339
 
---- dataset: data/input_large.bin (n=67108864) ---
-fft_baseline n=67108864 time_ms=12247.9787
-fft_baseline n=67108864 time_ms=12067.4563
-fft_baseline n=67108864 time_ms=11978.5704
-fft_baseline n=67108864 time_ms=11944.0249
-fft_baseline n=67108864 time_ms=11946.1139
-fir_baseline n=67108864 taps=101 time_ms=7786.0635
-fir_baseline n=67108864 taps=101 time_ms=7784.5212
-fir_baseline n=67108864 taps=101 time_ms=7780.2570
-fir_baseline n=67108864 taps=101 time_ms=7780.8814
-fir_baseline n=67108864 taps=101 time_ms=7777.2220
+--- dataset: data/input_21_generated.bin (n=2097152) ---
+fft_baseline n=2097152 time_ms=291.0561
+fft_baseline n=2097152 time_ms=291.5961
+fft_baseline n=2097152 time_ms=290.1952
+fft_baseline n=2097152 time_ms=285.2302
+fft_baseline n=2097152 time_ms=286.8600
+fir_baseline n=2097152 taps=101 time_ms=199.4270
+fir_baseline n=2097152 taps=101 time_ms=197.7836
+fir_baseline n=2097152 taps=101 time_ms=197.6913
+fir_baseline n=2097152 taps=101 time_ms=197.3027
+fir_baseline n=2097152 taps=101 time_ms=198.4666
 
+--- dataset: data/input_21_downloaded.bin (n=2097152) ---
+fft_baseline n=2097152 time_ms=287.6932
+fft_baseline n=2097152 time_ms=286.2125
+fft_baseline n=2097152 time_ms=284.7803
+fft_baseline n=2097152 time_ms=288.5932
+fft_baseline n=2097152 time_ms=291.0710
+fir_baseline n=2097152 taps=101 time_ms=197.0452
+fir_baseline n=2097152 taps=101 time_ms=197.8730
+fir_baseline n=2097152 taps=101 time_ms=197.2942
+fir_baseline n=2097152 taps=101 time_ms=198.0032
+fir_baseline n=2097152 taps=101 time_ms=198.3332
+
+--- dataset: data/input_22_generated.bin (n=4194304) ---
+fft_baseline n=4194304 time_ms=613.7727
+fft_baseline n=4194304 time_ms=616.8966
+fft_baseline n=4194304 time_ms=650.7498
+fft_baseline n=4194304 time_ms=611.2434
+fft_baseline n=4194304 time_ms=603.6610
+fir_baseline n=4194304 taps=101 time_ms=393.4155
+fir_baseline n=4194304 taps=101 time_ms=392.2886
+fir_baseline n=4194304 taps=101 time_ms=393.6374
+fir_baseline n=4194304 taps=101 time_ms=394.4141
+fir_baseline n=4194304 taps=101 time_ms=398.3415
+
+--- dataset: data/input_22_downloaded.bin (n=4194304) ---
+fft_baseline n=4194304 time_ms=611.5043
+fft_baseline n=4194304 time_ms=611.5185
+fft_baseline n=4194304 time_ms=617.0305
+fft_baseline n=4194304 time_ms=626.3600
+fft_baseline n=4194304 time_ms=609.4908
+fir_baseline n=4194304 taps=101 time_ms=393.4419
+fir_baseline n=4194304 taps=101 time_ms=392.4444
+fir_baseline n=4194304 taps=101 time_ms=392.9613
+fir_baseline n=4194304 taps=101 time_ms=392.3226
+fir_baseline n=4194304 taps=101 time_ms=396.9811
+
+--- dataset: data/input_23_generated.bin (n=8388608) ---
+fft_baseline n=8388608 time_ms=1281.0223
+fft_baseline n=8388608 time_ms=1306.6354
+fft_baseline n=8388608 time_ms=1282.8419
+fft_baseline n=8388608 time_ms=1270.5290
+fft_baseline n=8388608 time_ms=1276.7775
+fir_baseline n=8388608 taps=101 time_ms=756.3952
+fir_baseline n=8388608 taps=101 time_ms=771.2063
+fir_baseline n=8388608 taps=101 time_ms=776.5412
+fir_baseline n=8388608 taps=101 time_ms=791.5065
+fir_baseline n=8388608 taps=101 time_ms=787.9191
+
+--- dataset: data/input_23_downloaded.bin (n=8388608) ---
+fft_baseline n=8388608 time_ms=1284.3242
+fft_baseline n=8388608 time_ms=1299.2536
+fft_baseline n=8388608 time_ms=1285.5788
+fft_baseline n=8388608 time_ms=1287.8682
+fft_baseline n=8388608 time_ms=1273.1338
+fir_baseline n=8388608 taps=101 time_ms=788.0767
+fir_baseline n=8388608 taps=101 time_ms=791.5862
+fir_baseline n=8388608 taps=101 time_ms=797.6175
+fir_baseline n=8388608 taps=101 time_ms=786.2548
+fir_baseline n=8388608 taps=101 time_ms=789.5368
+
+--- dataset: data/input_24_generated.bin (n=16777216) ---
+fft_baseline n=16777216 time_ms=2638.0193
+fft_baseline n=16777216 time_ms=2635.2395
+fft_baseline n=16777216 time_ms=2638.3208
+fft_baseline n=16777216 time_ms=2640.5599
+fft_baseline n=16777216 time_ms=2603.5786
+fir_baseline n=16777216 taps=101 time_ms=1553.2889
+fir_baseline n=16777216 taps=101 time_ms=1591.6099
+fir_baseline n=16777216 taps=101 time_ms=1563.1053
+fir_baseline n=16777216 taps=101 time_ms=1579.3927
+fir_baseline n=16777216 taps=101 time_ms=1595.9612
+
+--- dataset: data/input_24_downloaded.bin (n=16777216) ---
+fft_baseline n=16777216 time_ms=2627.6662
+fft_baseline n=16777216 time_ms=2631.9899
+fft_baseline n=16777216 time_ms=2630.4793
+fft_baseline n=16777216 time_ms=2617.6838
+fft_baseline n=16777216 time_ms=2643.6888
+fir_baseline n=16777216 taps=101 time_ms=1581.5220
+fir_baseline n=16777216 taps=101 time_ms=1606.2444
+fir_baseline n=16777216 taps=101 time_ms=1590.0071
+fir_baseline n=16777216 taps=101 time_ms=1532.2193
+fir_baseline n=16777216 taps=101 time_ms=1550.9448
+
+--- dataset: data/input_25_generated.bin (n=33554432) ---
+fft_baseline n=33554432 time_ms=5426.5202
+fft_baseline n=33554432 time_ms=5385.3310
+fft_baseline n=33554432 time_ms=5529.1007
+fft_baseline n=33554432 time_ms=5402.8904
+fft_baseline n=33554432 time_ms=5394.9119
+fir_baseline n=33554432 taps=101 time_ms=3188.9505
+fir_baseline n=33554432 taps=101 time_ms=3217.7211
+fir_baseline n=33554432 taps=101 time_ms=3234.7523
+fir_baseline n=33554432 taps=101 time_ms=3205.3283
+fir_baseline n=33554432 taps=101 time_ms=3203.9163
+
+--- dataset: data/input_25_downloaded.bin (n=33554432) ---
+fft_baseline n=33554432 time_ms=5439.9756
+fft_baseline n=33554432 time_ms=5392.8725
+fft_baseline n=33554432 time_ms=5449.6704
+fft_baseline n=33554432 time_ms=5398.2706
+fft_baseline n=33554432 time_ms=5362.4569
+fir_baseline n=33554432 taps=101 time_ms=3193.3288
+fir_baseline n=33554432 taps=101 time_ms=3246.3124
+fir_baseline n=33554432 taps=101 time_ms=3208.9393
+fir_baseline n=33554432 taps=101 time_ms=3163.5689
+fir_baseline n=33554432 taps=101 time_ms=3176.0410
+
+--- dataset: data/input_26_generated.bin (n=67108864) ---
+fft_baseline n=67108864 time_ms=10966.4783
+fft_baseline n=67108864 time_ms=10991.3577
+fft_baseline n=67108864 time_ms=11055.3189
+fft_baseline n=67108864 time_ms=11029.5206
+fft_baseline n=67108864 time_ms=11021.3735
+fir_baseline n=67108864 taps=101 time_ms=6348.3890
+fir_baseline n=67108864 taps=101 time_ms=6302.4869
+fir_baseline n=67108864 taps=101 time_ms=6280.6714
+fir_baseline n=67108864 taps=101 time_ms=6201.2054
+fir_baseline n=67108864 taps=101 time_ms=6313.4685
+
+--- dataset: data/input_26_downloaded.bin (n=67108864) ---
+fft_baseline n=67108864 time_ms=12097.1117
+fft_baseline n=67108864 time_ms=11041.6617
+fft_baseline n=67108864 time_ms=11006.4808
+fft_baseline n=67108864 time_ms=10923.9939
+fft_baseline n=67108864 time_ms=11076.5948
+fir_baseline n=67108864 taps=101 time_ms=6307.7436
+fir_baseline n=67108864 taps=101 time_ms=6278.5852
+fir_baseline n=67108864 taps=101 time_ms=6167.5358
+fir_baseline n=67108864 taps=101 time_ms=6353.5558
+fir_baseline n=67108864 taps=101 time_ms=6324.3801
+
+--- dataset: data/input_27_generated.bin (n=134217728) ---
+fft_baseline n=134217728 time_ms=22498.4994
+fft_baseline n=134217728 time_ms=22523.6953
+fft_baseline n=134217728 time_ms=22367.3610
+fft_baseline n=134217728 time_ms=22454.2253
+fft_baseline n=134217728 time_ms=22430.4628
+fir_baseline n=134217728 taps=101 time_ms=12464.5709
+fir_baseline n=134217728 taps=101 time_ms=12677.7186
+fir_baseline n=134217728 taps=101 time_ms=12470.9908
+fir_baseline n=134217728 taps=101 time_ms=12569.2068
+fir_baseline n=134217728 taps=101 time_ms=12526.9264
+
+--- dataset: data/input_27_downloaded.bin (n=134217728) ---
+fft_baseline n=134217728 time_ms=22364.6460
+fft_baseline n=134217728 time_ms=22552.4829
+fft_baseline n=134217728 time_ms=22491.9729
+fft_baseline n=134217728 time_ms=22975.2990
+fft_baseline n=134217728 time_ms=22401.7445
+fir_baseline n=134217728 taps=101 time_ms=12592.5234
+fir_baseline n=134217728 taps=101 time_ms=12500.6808
+fir_baseline n=134217728 taps=101 time_ms=12563.1796
+fir_baseline n=134217728 taps=101 time_ms=12576.6983
+fir_baseline n=134217728 taps=101 time_ms=12538.8486
+
+--- dataset: data/input_28_generated.bin (n=268435456) ---
+fft_baseline n=268435456 time_ms=47881.2876
+fft_baseline n=268435456 time_ms=45902.0969
+fft_baseline n=268435456 time_ms=45988.2980
+fft_baseline n=268435456 time_ms=47550.8128
+fft_baseline n=268435456 time_ms=45874.9713
+fir_baseline n=268435456 taps=101 time_ms=25156.9252
+fir_baseline n=268435456 taps=101 time_ms=25216.3423
+fir_baseline n=268435456 taps=101 time_ms=25131.6184
+fir_baseline n=268435456 taps=101 time_ms=25079.1072
+fir_baseline n=268435456 taps=101 time_ms=25099.0834
+
+--- dataset: data/input_28_downloaded.bin (n=268435456) ---
+fft_baseline n=268435456 time_ms=46532.2655
+fft_baseline n=268435456 time_ms=45873.3615
+fft_baseline n=268435456 time_ms=45928.6778
+fft_baseline n=268435456 time_ms=45957.3226
+fft_baseline n=268435456 time_ms=46733.9753
+fir_baseline n=268435456 taps=101 time_ms=25113.1021
+fir_baseline n=268435456 taps=101 time_ms=25139.4978
+fir_baseline n=268435456 taps=101 time_ms=25112.3098
+fir_baseline n=268435456 taps=101 time_ms=25162.0628
+fir_baseline n=268435456 taps=101 time_ms=25018.5828
+
+--- dataset: data/input_29_generated.bin (n=536870912) ---
+fft_baseline n=536870912 time_ms=96994.7006
+fft_baseline n=536870912 time_ms=95341.1953
+fft_baseline n=536870912 time_ms=98979.7781
+fft_baseline n=536870912 time_ms=95106.9591
+fft_baseline n=536870912 time_ms=95246.7392
+fir_baseline n=536870912 taps=101 time_ms=50082.5292
+fir_baseline n=536870912 taps=101 time_ms=49955.2451
+fir_baseline n=536870912 taps=101 time_ms=50046.5501
+fir_baseline n=536870912 taps=101 time_ms=50162.4119
+fir_baseline n=536870912 taps=101 time_ms=50206.5360
+
+--- dataset: data/input_29_downloaded.bin (n=536870912) ---
+fft_baseline n=536870912 time_ms=101228.0012
+fft_baseline n=536870912 time_ms=100114.0084
+fft_baseline n=536870912 time_ms=99665.2246
+fft_baseline n=536870912 time_ms=98630.6647
+fft_baseline n=536870912 time_ms=95644.5842
+fir_baseline n=536870912 taps=101 time_ms=49976.8751
+fir_baseline n=536870912 taps=101 time_ms=49991.0349
+fir_baseline n=536870912 taps=101 time_ms=49950.7633
+fir_baseline n=536870912 taps=101 time_ms=50099.6223
+fir_baseline n=536870912 taps=101 time_ms=49967.3556

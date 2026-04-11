@@ -17,7 +17,7 @@ THREADS=(1 8 32)                       # thread counts to profile
 VTUNE_DIR="results/vtune"             # output directory for vtune results
 # -----------------------------------------------------------------------------
 
-module load VTune
+module load VTune/2025.0
 module load OpenMPI/4.1.6
 
 mkdir -p $VTUNE_DIR
@@ -32,7 +32,6 @@ for nt in "${THREADS[@]}"; do
     label="fft_pthreads_t${nt}"
     echo "--- $label ---"
     vtune -collect hotspots \
-          -collect-with runsa \
           -knob enable-stack-collection=true \
           -result-dir ${VTUNE_DIR}/${label} \
           -- ./fft/pthreads/fft_pthreads $INPUT $N $nt
@@ -46,7 +45,6 @@ for nt in "${THREADS[@]}"; do
     label="fir_pthreads_t${nt}"
     echo "--- $label ---"
     vtune -collect hotspots \
-          -collect-with runsa \
           -knob enable-stack-collection=true \
           -result-dir ${VTUNE_DIR}/${label} \
           -- ./fir/pthreads/fir_pthreads $INPUT $N $NUM_TAPS $CUTOFF $nt
@@ -59,7 +57,6 @@ done
 label="fft_openmp_t32"
 echo "--- $label ---"
 vtune -collect hotspots \
-      -collect-with runsa \
       -knob enable-stack-collection=true \
       -result-dir ${VTUNE_DIR}/${label} \
       -- ./fft/openmp/fft_openmp $INPUT $N 32
@@ -71,7 +68,6 @@ echo ""
 label="fir_openmp_t32"
 echo "--- $label ---"
 vtune -collect hotspots \
-      -collect-with runsa \
       -knob enable-stack-collection=true \
       -result-dir ${VTUNE_DIR}/${label} \
       -- ./fir/openmp/fir_openmp $INPUT $N $NUM_TAPS $CUTOFF 32

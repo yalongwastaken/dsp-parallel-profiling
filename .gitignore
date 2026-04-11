@@ -17,6 +17,9 @@ fir/mpi/fir_mpi
 data/*
 !data/README.md
 
+# result files
+results/vtune/*
+
 # python
 .venv/
 __pycache__/

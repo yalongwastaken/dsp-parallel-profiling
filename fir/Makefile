@@ -1,6 +1,6 @@
 CC      = gcc
 MPICC   = mpicc
-CFLAGS  = -O2 -Wall -Wextra
+CFLAGS  = -O2 -g -Wall -Wextra
 LDFLAGS = -lm
 
 .PHONY: all clean

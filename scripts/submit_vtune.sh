@@ -9,16 +9,24 @@
 #SBATCH --partition=courses
 
 # --- configuration -----------------------------------------------------------
-INPUT="data/input_26_generated.bin"   # representative input (2^26)
-N=67108864                             # number of samples
-NUM_TAPS=101                           # fir taps
-CUTOFF=0.1                             # fir cutoff
-THREADS=(1 8 32)                       # thread counts to profile
-VTUNE_DIR="results/vtune"             # output directory for vtune results
+REPO="/home/yalong.a/2025-2026/spring/eece5640/finalproject/eece5640-finalproject"
+INPUT="${REPO}/data/input_26_generated.bin"   # absolute path to input
+N=67108864                                     # number of samples
+NUM_TAPS=101                                   # fir taps
+CUTOFF=0.1                                     # fir cutoff
+THREADS=(1 8 32)                               # thread counts to profile
+VTUNE_DIR="${REPO}/results/vtune"             # absolute path for vtune results
 # -----------------------------------------------------------------------------
 
 module load VTune/2025.0
 module load OpenMPI/4.1.6
+
+# hardcoded repo root — update if your path differs
+REPO="/home/yalong.a/2025-2026/spring/eece5640/finalproject/eece5640-finalproject"
+cd $REPO
+
+# build all targets
+cd fft && make && cd ../fir && make && cd ..
 
 mkdir -p $VTUNE_DIR
 
@@ -34,7 +42,7 @@ for nt in "${THREADS[@]}"; do
     vtune -collect hotspots \
           -knob enable-stack-collection=true \
           -result-dir ${VTUNE_DIR}/${label} \
-          -- ./fft/pthreads/fft_pthreads $INPUT $N $nt
+          -- ${REPO}/fft/pthreads/fft_pthreads $INPUT $N $nt
     vtune -report summary -result-dir ${VTUNE_DIR}/${label} \
           > ${VTUNE_DIR}/${label}_summary.txt
     echo ""
@@ -47,7 +55,7 @@ for nt in "${THREADS[@]}"; do
     vtune -collect hotspots \
           -knob enable-stack-collection=true \
           -result-dir ${VTUNE_DIR}/${label} \
-          -- ./fir/pthreads/fir_pthreads $INPUT $N $NUM_TAPS $CUTOFF $nt
+          -- ${REPO}/fir/pthreads/fir_pthreads $INPUT $N $NUM_TAPS $CUTOFF $nt
     vtune -report summary -result-dir ${VTUNE_DIR}/${label} \
           > ${VTUNE_DIR}/${label}_summary.txt
     echo ""
@@ -59,7 +67,7 @@ echo "--- $label ---"
 vtune -collect hotspots \
       -knob enable-stack-collection=true \
       -result-dir ${VTUNE_DIR}/${label} \
-      -- ./fft/openmp/fft_openmp $INPUT $N 32
+      -- ${REPO}/fft/openmp/fft_openmp $INPUT $N 32
 vtune -report summary -result-dir ${VTUNE_DIR}/${label} \
       > ${VTUNE_DIR}/${label}_summary.txt
 echo ""
@@ -70,7 +78,7 @@ echo "--- $label ---"
 vtune -collect hotspots \
       -knob enable-stack-collection=true \
       -result-dir ${VTUNE_DIR}/${label} \
-      -- ./fir/openmp/fir_openmp $INPUT $N $NUM_TAPS $CUTOFF 32
+      -- ${REPO}/fir/openmp/fir_openmp $INPUT $N $NUM_TAPS $CUTOFF 32
 vtune -report summary -result-dir ${VTUNE_DIR}/${label} \
       > ${VTUNE_DIR}/${label}_summary.txt
 echo ""

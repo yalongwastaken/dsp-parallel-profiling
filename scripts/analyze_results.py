@@ -2,7 +2,7 @@
 # author:      Vaidehi Gohil, Anthony Yalong
 # description: parses raw benchmark output files, computes mean/std dev,
 #              speedup, and parallel efficiency, writes a combined CSV,
-#              and generates speedup and efficiency plots.
+#              and generates speedup, efficiency, scaling, and weak scaling plots.
 # usage:       python3 scripts/analyze_results.py \
 #                  --baseline  results/baseline.out \
 #                  --pthreads  results/pthreads.out \
@@ -78,7 +78,7 @@ def parse_file(path):
 
 
 def merge(*dicts):
-    """Merge multiple parsed data dicts into one."""
+    """merge multiple parsed data dicts into one."""
     merged = defaultdict(list)
     for d in dicts:
         for k, v in d.items():
@@ -146,7 +146,7 @@ def compute_stats(data):
 # --- csv output --------------------------------------------------------------
 
 def write_csv(rows, path):
-    """Write stats rows to a CSV file."""
+    """write stats rows to a CSV file."""
     fields = ['workload', 'middleware', 'input_type', 'n', 'p',
               'mean_ms', 'std_ms', 'speedup', 'efficiency']
     with open(path, 'w', newline='') as f:
@@ -165,9 +165,14 @@ MARKERS     = {'pthreads': 'o', 'openmp': 's', 'mpi': '^'}
 # representative sizes to show on plots — skip very small n where noise dominates
 PLOT_SIZES  = [2**e for e in [22, 23, 24, 25, 26, 27, 28, 29]]
 
+# weak scaling: base size n0 at p=1, scaled as n0*p for each p
+# 2^23 * 32 = 2^28, which is within the data range for all middlewares
+WEAK_BASE_EXP = 23
+WEAK_PAIRS    = [(p, 2**WEAK_BASE_EXP * p) for p in [1, 2, 4, 8, 16, 32]]
+
 
 def plot_speedup(rows, workload, input_type, outdir):
-    """Plot speedup vs thread/process count for selected n values."""
+    """plot speedup vs thread/process count for selected n values."""
     fig, axes = plt.subplots(1, len(PLOT_SIZES), figsize=(4 * len(PLOT_SIZES), 4),
                              sharey=False)
     fig.suptitle(f'{workload.upper()} speedup — {input_type} input', fontsize=13)
@@ -211,7 +216,7 @@ def plot_speedup(rows, workload, input_type, outdir):
 
 
 def plot_efficiency(rows, workload, input_type, outdir):
-    """Plot parallel efficiency vs thread/process count for selected n values."""
+    """plot parallel efficiency vs thread/process count for selected n values."""
     fig, axes = plt.subplots(1, len(PLOT_SIZES), figsize=(4 * len(PLOT_SIZES), 4),
                              sharey=False)
     fig.suptitle(f'{workload.upper()} parallel efficiency — {input_type} input',
@@ -255,7 +260,7 @@ def plot_efficiency(rows, workload, input_type, outdir):
 
 
 def plot_scaling(rows, workload, input_type, outdir):
-    """Plot mean execution time vs n for each middleware at 32 threads."""
+    """plot mean execution time vs n for each middleware at 32 threads."""
     fig, ax = plt.subplots(figsize=(7, 5))
     ax.set_title(f'{workload.upper()} strong scaling (p=32) — {input_type} input',
                  fontsize=12)
@@ -294,7 +299,7 @@ def plot_scaling(rows, workload, input_type, outdir):
 
 
 def plot_generated_vs_downloaded(rows, workload, middleware, outdir):
-    """Plot mean time for generated vs downloaded input at p=32 across n."""
+    """plot mean time for generated vs downloaded input at p=32 across n."""
     p = 1 if middleware == 'baseline' else 32
     fig, ax = plt.subplots(figsize=(7, 5))
     ax.set_title(f'{workload.upper()} {middleware} — generated vs downloaded (p={p})',
@@ -326,6 +331,81 @@ def plot_generated_vs_downloaded(rows, workload, middleware, outdir):
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
     fname = os.path.join(outdir, f'genvsdown_{workload}_{middleware}.png')
+    plt.savefig(fname, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"  wrote {fname}")
+
+
+def plot_weak_scaling(rows, workload, input_type, outdir):
+    """plot weak scaling efficiency vs process count.
+
+    weak scaling holds work-per-process constant by pairing each p with
+    n = WEAK_BASE * p. efficiency = T(1, n0) / T(p, n0*p) — ideal is 1.0.
+    uses generated input only since all sizes are present there.
+    """
+    # build a lookup: (middleware, n, p) -> mean_ms
+    lookup = {(r['middleware'], r['n'], r['p']): r['mean_ms']
+              for r in rows
+              if r['workload'] == workload and r['input_type'] == input_type}
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    fig.suptitle(
+        f'{workload.upper()} weak scaling efficiency — {input_type} input'
+        f'  (base n = 2^{WEAK_BASE_EXP} per process)',
+        fontsize=13)
+
+    ps = [p for p, _ in WEAK_PAIRS]
+
+    for ax, panel in zip(axes, ['efficiency', 'time']):
+        ax.axhline(1.0, color='k', linestyle='--', linewidth=0.8,
+                   label='ideal', alpha=0.5)
+
+        for mw in MIDDLEWARES:
+            # T(1) at base size for this middleware
+            t1 = lookup.get((mw, WEAK_PAIRS[0][1], 1))
+            if t1 is None:
+                continue
+
+            pts = []
+            for p, n in WEAK_PAIRS:
+                t = lookup.get((mw, n, p))
+                if t is None:
+                    continue
+                if panel == 'efficiency':
+                    pts.append((p, t1 / t))   # weak efficiency = T(1) / T(p)
+                else:
+                    pts.append((p, t))         # raw time to show overhead growth
+
+            if not pts:
+                continue
+            pts.sort()
+            xs, ys = zip(*pts)
+            ax.plot(xs, ys, marker=MARKERS[mw], color=COLORS[mw],
+                    label=mw, linewidth=1.5, markersize=5)
+
+        ax.set_xlabel('process / thread count')
+        ax.set_xscale('log', base=2)
+        ax.set_xticks(ps)
+        ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+
+        if panel == 'efficiency':
+            ax.set_title('weak scaling efficiency  E = T(1) / T(p)', fontsize=10)
+            ax.set_ylabel('efficiency (1.0 = ideal)')
+            ax.set_ylim(0, 1.2)
+        else:
+            ax.set_title('wall time at each (p, n=base*p)', fontsize=10)
+            ax.set_ylabel('mean time (ms)')
+
+    # annotate the (p, n) pairs along the x-axis of the time panel
+    axes[1].set_xticks(ps)
+    axes[1].set_xticklabels(
+        [f'p={p}\nn=2^{int(np.log2(n))}' for p, n in WEAK_PAIRS],
+        fontsize=7)
+
+    plt.tight_layout()
+    fname = os.path.join(outdir, f'weak_scaling_{workload}_{input_type}.png')
     plt.savefig(fname, dpi=150, bbox_inches='tight')
     plt.close()
     print(f"  wrote {fname}")
@@ -366,6 +446,7 @@ def main():
             plot_speedup(rows, workload, input_type, args.outdir)
             plot_efficiency(rows, workload, input_type, args.outdir)
             plot_scaling(rows, workload, input_type, args.outdir)
+            plot_weak_scaling(rows, workload, input_type, args.outdir)
         for middleware in ['baseline', 'pthreads', 'openmp', 'mpi']:
             plot_generated_vs_downloaded(rows, workload, middleware, args.outdir)
 

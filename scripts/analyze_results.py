@@ -163,7 +163,7 @@ COLORS      = {'pthreads': '#1f77b4', 'openmp': '#ff7f0e', 'mpi': '#2ca02c'}
 MARKERS     = {'pthreads': 'o', 'openmp': 's', 'mpi': '^'}
 
 # representative sizes to show on plots — skip very small n where noise dominates
-PLOT_SIZES  = [2**e for e in [22, 23, 24, 25, 26, 27, 28, 29]]
+PLOT_SIZES  = [2**e for e in [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]]
 
 # weak scaling: base size n0 at p=1, scaled as n0*p for each p
 # 2^23 * 32 = 2^28, which is within the data range for all middlewares
@@ -172,21 +172,25 @@ WEAK_PAIRS    = [(p, 2**WEAK_BASE_EXP * p) for p in [1, 2, 4, 8, 16, 32]]
 
 
 def plot_speedup(rows, workload, input_type, outdir):
-    """plot speedup vs thread/process count for selected n values."""
-    fig, axes = plt.subplots(1, len(PLOT_SIZES), figsize=(4 * len(PLOT_SIZES), 4),
+    """plot speedup vs thread/process count.
+
+    one subplot per middleware, with each input size n as a separate line.
+    this makes it easy to compare scaling across problem sizes per middleware.
+    """
+    # one color per input size — use a colormap for enough distinct colors
+    cmap = plt.get_cmap('plasma')
+    size_colors = {n: cmap(i / (len(PLOT_SIZES) - 1)) for i, n in enumerate(PLOT_SIZES)}
+
+    ps = [1, 2, 4, 8, 16, 32]
+    fig, axes = plt.subplots(1, len(MIDDLEWARES), figsize=(7 * len(MIDDLEWARES), 6),
                              sharey=False)
     fig.suptitle(f'{workload.upper()} speedup — {input_type} input', fontsize=13)
 
-    for ax, n in zip(axes, PLOT_SIZES):
-        ax.set_title(f'n = 2^{int(np.log2(n))}', fontsize=10)
-        ax.set_xlabel('threads / processes')
-        ax.set_ylabel('speedup S(p)')
-
+    for ax, mw in zip(axes, MIDDLEWARES):
         # ideal speedup reference line
-        ps = [1, 2, 4, 8, 16, 32]
-        ax.plot(ps, ps, 'k--', linewidth=0.8, label='ideal', alpha=0.5)
+        ax.plot(ps, ps, 'k--', linewidth=0.8, label='ideal', alpha=0.4)
 
-        for mw in MIDDLEWARES:
+        for n in PLOT_SIZES:
             pts = [(r['p'], r['speedup'])
                    for r in rows
                    if r['workload'] == workload
@@ -199,13 +203,16 @@ def plot_speedup(rows, workload, input_type, outdir):
                 continue
             pts.sort()
             xs, ys = zip(*pts)
-            ax.plot(xs, ys, marker=MARKERS[mw], color=COLORS[mw],
-                    label=mw, linewidth=1.5, markersize=5)
+            ax.plot(xs, ys, marker='o', color=size_colors[n],
+                    label=f'2^{int(np.log2(n))}', linewidth=1.5, markersize=4)
 
+        ax.set_title(mw, fontsize=11)
+        ax.set_xlabel('threads / processes')
+        ax.set_ylabel('speedup S(p)')
         ax.set_xticks(ps)
         ax.set_xscale('log', base=2)
         ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
-        ax.legend(fontsize=7)
+        ax.legend(title='n = 2^', fontsize=7, title_fontsize=7, ncol=2)
         ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -216,20 +223,25 @@ def plot_speedup(rows, workload, input_type, outdir):
 
 
 def plot_efficiency(rows, workload, input_type, outdir):
-    """plot parallel efficiency vs thread/process count for selected n values."""
-    fig, axes = plt.subplots(1, len(PLOT_SIZES), figsize=(4 * len(PLOT_SIZES), 4),
+    """plot parallel efficiency vs thread/process count.
+
+    one subplot per middleware, with each input size n as a separate line.
+    mirrors the layout of plot_speedup for consistency.
+    """
+    cmap = plt.get_cmap('plasma')
+    size_colors = {n: cmap(i / (len(PLOT_SIZES) - 1)) for i, n in enumerate(PLOT_SIZES)}
+
+    ps = [1, 2, 4, 8, 16, 32]
+    fig, axes = plt.subplots(1, len(MIDDLEWARES), figsize=(7 * len(MIDDLEWARES), 6),
                              sharey=False)
     fig.suptitle(f'{workload.upper()} parallel efficiency — {input_type} input',
                  fontsize=13)
 
-    for ax, n in zip(axes, PLOT_SIZES):
-        ax.set_title(f'n = 2^{int(np.log2(n))}', fontsize=10)
-        ax.set_xlabel('threads / processes')
-        ax.set_ylabel('efficiency E(p) = S(p) / p')
+    for ax, mw in zip(axes, MIDDLEWARES):
         ax.axhline(1.0, color='k', linestyle='--', linewidth=0.8,
-                   label='ideal', alpha=0.5)
+                   label='ideal', alpha=0.4)
 
-        for mw in MIDDLEWARES:
+        for n in PLOT_SIZES:
             pts = [(r['p'], r['efficiency'])
                    for r in rows
                    if r['workload'] == workload
@@ -242,14 +254,18 @@ def plot_efficiency(rows, workload, input_type, outdir):
                 continue
             pts.sort()
             xs, ys = zip(*pts)
-            ax.plot(xs, ys, marker=MARKERS[mw], color=COLORS[mw],
-                    label=mw, linewidth=1.5, markersize=5)
+            ax.plot(xs, ys, marker='o', color=size_colors[n],
+                    label=f'2^{int(np.log2(n))}', linewidth=1.5, markersize=4)
 
-        ax.set_xticks([1, 2, 4, 8, 16, 32])
+        ax.set_title(mw, fontsize=11)
+        ax.set_xlabel('threads / processes')
+        ax.set_ylabel('efficiency E(p) = S(p) / p')
+        ax.set_xlim(0.8, 40)
+        ax.set_xticks(ps)
         ax.set_xscale('log', base=2)
         ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
         ax.set_ylim(0, 1.2)
-        ax.legend(fontsize=7)
+        ax.legend(title='n = 2^', fontsize=7, title_fontsize=7, ncol=2)
         ax.grid(True, alpha=0.3)
 
     plt.tight_layout()

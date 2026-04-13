@@ -21,12 +21,12 @@ HOTSPOT_N = 134217728       # 2^27 — large enough for stable hotspot %
 HOTSPOT_N_LABEL = 27
 
 COLORS = {
-    'openmp': '#1f77b4',
+    'openmp':   '#1f77b4',
     'pthreads': '#ff7f0e',
-    'ideal': '#888888',
-    'top': '#E53935',
-    'second': '#FB8C00',
-    'other': '#90A4AE',
+    'ideal':    '#888888',
+    'top':      '#E53935',
+    'second':   '#FB8C00',
+    'other':    '#90A4AE',
 }
 MARKERS = {'openmp': 'o', 'pthreads': 's'}
 LABELS  = {'openmp': 'OpenMP', 'pthreads': 'Pthreads'}
@@ -35,8 +35,9 @@ LABELS  = {'openmp': 'OpenMP', 'pthreads': 'Pthreads'}
 FN_NAME_MAP = {
     'fft_parallel._omp_fn.0': 'fft_parallel (OMP)',
     'fir_parallel._omp_fn.0': 'fir_parallel (OMP)',
-    '_IO_fread': 'fread',
+    '_IO_fread':               'fread',
 }
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -59,7 +60,9 @@ def main():
 
     print(f'\ndone. outputs in {outdir}/')
 
-# --- data loading ------------------------------------------------------------
+
+# data loading ----------------------------------------------------------------
+
 def load_data(path):
     df = pd.read_csv(path)
     df['threads'] = df['threads'].astype(int)
@@ -72,18 +75,22 @@ def load_data(path):
                        - df['second_hotspot_pct'].fillna(0)).clip(lower=0)
     return df
 
+
 def mean_by_threads(df, workload, variant, col):
-    """return per-thread mean of col for a given workload/variant, indexed to THREAD_COUNTS."""
+    # return per-thread mean of col for a given workload/variant, indexed to THREAD_COUNTS
     sub = df[(df['workload'] == workload) & (df['variant'] == variant)]
     return sub.groupby('threads')[col].mean().reindex(THREAD_COUNTS)
 
+
 def clean_fn_name(name):
-    """map raw vtune symbol names to readable labels."""
+    # map raw vtune symbol names to readable labels
     if pd.isna(name) or name == '':
         return 'other'
     return FN_NAME_MAP.get(str(name), str(name))
 
-# --- figure 1: physical core utilization -------------------------------------
+
+# figure 1: physical core utilization -----------------------------------------
+
 def plot_core_utilization(df, outdir):
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
     fig.suptitle('Physical Core Utilization vs Thread Count', fontsize=13)
@@ -107,7 +114,9 @@ def plot_core_utilization(df, outdir):
     fig.tight_layout()
     save(fig, outdir, 'vtune_core_utilization.png')
 
-# --- figure 2: cpu/elapsed ratio (parallelism proxy) ------------------------
+
+# figure 2: cpu/elapsed ratio (parallelism proxy) -----------------------------
+
 def plot_parallelism_proxy(df, outdir):
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
     fig.suptitle('CPU Time / Elapsed Time vs Thread Count  (ideal = thread count)',
@@ -135,7 +144,9 @@ def plot_parallelism_proxy(df, outdir):
     fig.tight_layout()
     save(fig, outdir, 'vtune_parallelism_proxy.png')
 
-# --- figures 3 & 4: hotspot stacked bars ------------------------------------
+
+# figures 3 & 4: hotspot stacked bars ----------------------------------------
+
 def plot_hotspots(df, workload, outdir):
     fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharey=True)
     fig.suptitle(
@@ -152,22 +163,22 @@ def plot_hotspots(df, workload, outdir):
             ax.set_title(f'{LABELS[variant]} (no data)')
             continue
 
-        threads = sub['threads'].tolist()
-        top_pct = sub['top_hotspot_pct'].fillna(0).tolist()
+        threads    = sub['threads'].tolist()
+        top_pct    = sub['top_hotspot_pct'].fillna(0).tolist()
         second_pct = sub['second_hotspot_pct'].fillna(0).tolist()
-        other_pct = sub['other_pct'].tolist()
-        bottoms = [a + b for a, b in zip(top_pct, second_pct)]
+        other_pct  = sub['other_pct'].tolist()
+        bottoms    = [a + b for a, b in zip(top_pct, second_pct)]
 
         # use modal function name across thread counts as legend label
-        top_label = clean_fn_name(sub['top_hotspot_fn'].mode().iloc[0] if not sub['top_hotspot_fn'].isna().all() else '')
+        top_label    = clean_fn_name(sub['top_hotspot_fn'].mode().iloc[0] if not sub['top_hotspot_fn'].isna().all() else '')
         second_label = clean_fn_name(sub['second_hotspot_fn'].mode().iloc[0] if not sub['second_hotspot_fn'].isna().all() else '')
 
-        x  = np.arange(len(threads))
+        x     = np.arange(len(threads))
         width = 0.55
 
-        ax.bar(x, top_pct, width, label=top_label, color=COLORS['top'])
-        ax.bar(x, second_pct, width, bottom=top_pct, label=second_label, color=COLORS['second'])
-        ax.bar(x, other_pct, width, bottom=bottoms, label='other', color=COLORS['other'])
+        ax.bar(x, top_pct,    width, label=top_label,    color=COLORS['top'])
+        ax.bar(x, second_pct, width, bottom=top_pct,     label=second_label, color=COLORS['second'])
+        ax.bar(x, other_pct,  width, bottom=bottoms,     label='other',      color=COLORS['other'])
 
         ax.set_title(LABELS[variant], fontsize=11)
         ax.set_xlabel('thread count')
@@ -181,7 +192,9 @@ def plot_hotspots(df, workload, outdir):
     fig.tight_layout()
     save(fig, outdir, f'vtune_hotspots_{workload}.png')
 
-# --- helpers -----------------------------------------------------------------
+
+# helpers ---------------------------------------------------------------------
+
 def save(fig, outdir, fname):
     path = os.path.join(outdir, fname)
     fig.savefig(path, dpi=150, bbox_inches='tight')

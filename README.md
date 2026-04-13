@@ -1,6 +1,8 @@
 # EECE5640 Final Project — FFT & FIR Filter Parallelization Study
 **Team:** Vaidehi Gohil, Anthony Yalong
+
 **Course:** EECE5640
+
 **Platform:** Explorer Cluster (SLURM/SBATCH)
 
 ## Overview
@@ -55,6 +57,7 @@ The goal is to benchmark and analyze parallel scaling behavior (speedup, efficie
 │   ├── submit_mpi.sh          # submits mpi benchmark jobs
 │   ├── submit_vtune.sh        # submits vtune hotspot profiling jobs
 │   ├── parse_vtune_summaries.py  # parses vtune summary txts into csv
+│   ├── plot_vtune.py          # generates vtune profiling figures from csv
 │   └── analyze_results.py     # computes speedup/efficiency and generates plots
 ├── .gitignore
 ├── requirements.txt
@@ -97,7 +100,7 @@ cd eece5640-finalproject
 python3 -m venv .venv
 source .venv/bin/activate
 
-# install python dependencies (numpy, matplotlib, soundfile)
+# install python dependencies
 pip install -r requirements.txt
 ```
 
@@ -112,7 +115,7 @@ cd eece5640-finalproject
 module load OpenMPI/4.1.6
 module load python/3.13.5
 
-# activate virtual environment (numpy and soundfile must be installed)
+# create and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -196,6 +199,8 @@ mpirun -np <nprocs> ./fft/mpi/fft_mpi <input.bin> <n_samples> [-v]
 mpirun -np <nprocs> ./fir/mpi/fir_mpi <input.bin> <n_samples> <num_taps> <cutoff> [-v]
 ```
 
+> **Note:** `fft_mpi` is a segmented FFT — each rank independently computes the FFT over its own `n/nprocs` chunk rather than a true distributed FFT over the full signal. MPI speedup results should be interpreted accordingly.
+
 ## Submitting Jobs on Explorer
 
 Each submission script runs both FFT and FIR across all thread/process counts and all datasets (both generated and downloaded). Make sure both input pipelines have been run before submitting. The `SIZES` variable must match what was used during data generation.
@@ -235,10 +240,16 @@ SIZES="20 21 22 23 24 25 26 27 28 29" sbatch scripts/submit_vtune.sh
 Per-run result directories and summary text files are written to `results/vtune/` (gitignored). Once complete, parse all summaries into a single CSV:
 
 ```bash
-python scripts/parse_vtune_summaries.py results/vtune results/vtune_summary.csv
+python3 scripts/parse_vtune_summaries.py results/vtune results/vtune_summary.csv
 ```
 
-The CSV (`results/vtune_summary.csv`) is committed to the repo and contains one row per run with the following fields: `workload`, `variant`, `threads`, `n`, `elapsed_time_s`, `cpu_time_s`, `top_hotspot_fn`, `top_hotspot_pct`, `second_hotspot_fn`, `second_hotspot_pct`, `physical_core_util_pct`.
+The CSV (`results/vtune_summary.csv`) is committed to the repo and contains one row per run with the following fields: `workload`, `variant`, `threads`, `n`, `elapsed_time_s`, `cpu_time_s`, `top_hotspot_fn`, `top_hotspot_pct`, `second_hotspot_fn`, `second_hotspot_pct`, `physical_core_util_pct`, `filename`.
+
+To generate profiling figures from the CSV:
+
+```bash
+python3 scripts/plot_vtune.py --csv results/vtune_summary.csv --outdir results/analysis
+```
 
 Note: the raw `results/vtune/` directory is gitignored due to size. Only the parsed CSV is tracked.
 
@@ -263,7 +274,7 @@ python3 scripts/analyze_results.py \
 - `scaling_{fft|fir}_{generated|downloaded}.png` — execution time vs n at p=32 across all middlewares
 - `genvsdown_{fft|fir}_{middleware}.png` — generated vs downloaded input comparison
 
-Requires `numpy` and `matplotlib` (`pip install -r requirements.txt`).
+Requires `numpy`, `matplotlib`, and `pandas` (`pip install -r requirements.txt`).
 
 ## Metrics
 

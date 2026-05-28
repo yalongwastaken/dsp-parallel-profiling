@@ -1,21 +1,6 @@
-# EECE5640 Final Project — FFT & FIR Filter Parallelization Study
-**Team:** Vaidehi Gohil, Anthony Yalong
+# dsp-parallel-profiling
 
-**Course:** EECE5640
-
-**Platform:** Explorer Cluster (SLURM/SBATCH)
-
-## Overview
-This repository contains parallel implementations of two DSP workloads:
-- **Fast Fourier Transform (FFT)**
-- **FIR Filtering (Finite Impulse Response)**
-
-Each workload is implemented using three parallelization middlewares:
-- **Pthreads**
-- **OpenMP**
-- **OpenMPI** (extra credit)
-
-The goal is to benchmark and analyze parallel scaling behavior (speedup, efficiency) across middlewares and input sizes on a single multi-core node. Benchmarks are run on both synthetic and real-world (LibriSpeech) input data to compare performance across signal types. VTune hotspot profiling is also collected across all configurations to identify bottlenecks and analyze CPU utilization.
+A parallelization study of two DSP workloads — FFT and FIR filtering — across Pthreads, OpenMP, and OpenMPI. Benchmarks scaling behavior (speedup, efficiency) across thread/process counts and input sizes on a multi-core cluster, with VTune hotspot profiling to identify bottlenecks and analyze CPU utilization.
 
 ## Repo Structure
 ```

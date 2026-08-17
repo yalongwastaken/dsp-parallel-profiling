@@ -1,8 +1,10 @@
-# dsp-parallel-profiling
+# DSP Parallel Profiling
 
 A parallelization study of two DSP workloads — FFT and FIR filtering — across Pthreads, OpenMP, and OpenMPI. Benchmarks scaling behavior (speedup, efficiency) across thread/process counts and input sizes on a multi-core cluster, with VTune hotspot profiling to identify bottlenecks and analyze CPU utilization.
 
-## Repo Structure
+> **Status: complete.**
+
+## Repository Structure
 ```
 .
 ├── administrative/            # documents, reports, and write-ups
@@ -69,7 +71,7 @@ Output files follow the naming convention `data/input_{exp}_generated.bin` and `
 
 The `data/` directory is gitignored due to file size. Generate or download inputs before running any jobs.
 
-## Setup
+## Installation
 
 ### Local (macOS)
 
@@ -162,7 +164,7 @@ python3 tests/fir/mpi/test_fir_mpi.py
 
 All tests generate their own small inputs internally and do not depend on the `data/` directory.
 
-## Running Manually
+## Usage
 
 The `-v` flag dumps output samples to stdout for testing. Omit it for clean benchmark runs.
 
@@ -270,3 +272,9 @@ For each configuration we collect:
 
 Thread/process counts tested: **1, 2, 4, 8, 16, 32**
 Input types: **synthetic (generated)** and **real-world (librispeech)**
+
+## Author
+
+**Anthony Yalong**
+- Email: yalong.anthony123@gmail.com
+- GitHub: [@yalongwastaken](https://github.com/yalongwastaken)
